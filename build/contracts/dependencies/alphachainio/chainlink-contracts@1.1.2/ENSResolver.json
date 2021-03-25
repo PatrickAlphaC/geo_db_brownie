@@ -1,0 +1,192 @@
+{
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "node",
+          "type": "bytes32"
+        }
+      ],
+      "name": "addr",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "allSourcePaths": {
+    "8": "/Users/patrick/.brownie/packages/alphachainio/chainlink-contracts@1.1.2/contracts/src/v0.6/vendor/ENSResolver.sol"
+  },
+  "ast": {
+    "absolutePath": "/Users/patrick/.brownie/packages/alphachainio/chainlink-contracts@1.1.2/contracts/src/v0.6/vendor/ENSResolver.sol",
+    "exportedSymbols": {
+      "ENSResolver": [
+        1105
+      ]
+    },
+    "id": 1106,
+    "license": null,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1097,
+        "literals": [
+          "solidity",
+          "^",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:8"
+      },
+      {
+        "abstract": true,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 1105,
+        "linearizedBaseContracts": [
+          1105
+        ],
+        "name": "ENSResolver",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": null,
+            "functionSelector": "3b3b57de",
+            "id": 1104,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "addr",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 1100,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1099,
+                  "mutability": "mutable",
+                  "name": "node",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 1104,
+                  "src": "73:12:8",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 1098,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "73:7:8",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "72:14:8"
+            },
+            "returnParameters": {
+              "id": 1103,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1102,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 1104,
+                  "src": "116:7:8",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1101,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "116:7:8",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "115:9:8"
+            },
+            "scope": 1105,
+            "src": "59:66:8",
+            "stateMutability": "view",
+            "virtual": true,
+            "visibility": "public"
+          }
+        ],
+        "scope": 1106,
+        "src": "25:102:8"
+      }
+    ],
+    "src": "0:128:8"
+  },
+  "bytecode": "",
+  "bytecodeSha1": "da39a3ee5e6b4b0d3255bfef95601890afd80709",
+  "compiler": {
+    "evm_version": "istanbul",
+    "optimizer": {
+      "enabled": true,
+      "runs": 200
+    },
+    "version": "0.6.12+commit.27d51765"
+  },
+  "contractName": "ENSResolver",
+  "coverageMap": {
+    "branches": {},
+    "statements": {}
+  },
+  "dependencies": [],
+  "deployedBytecode": "",
+  "deployedSourceMap": "",
+  "language": "Solidity",
+  "natspec": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "offset": [
+    25,
+    127
+  ],
+  "opcodes": "",
+  "pcMap": {},
+  "sha1": "2f8716ba114be8b81e15a3f05c2171a844bf1571",
+  "source": "pragma solidity ^0.6.0;\n\nabstract contract ENSResolver {\n  function addr(bytes32 node) public view virtual returns (address);\n}\n",
+  "sourceMap": "",
+  "sourcePath": "/Users/patrick/.brownie/packages/alphachainio/chainlink-contracts@1.1.2/contracts/src/v0.6/vendor/ENSResolver.sol",
+  "type": "contract"
+}

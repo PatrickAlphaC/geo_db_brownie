@@ -1,0 +1,7982 @@
+{
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "_keyhash",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "address",
+          "name": "_vrfCoordinator",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_linkToken",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "userProvidedSeed",
+          "type": "uint256"
+        }
+      ],
+      "name": "getRandomNumber",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "requestId",
+          "type": "bytes32"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "name": "nonces",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "randomResult",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "requestId",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "uint256",
+          "name": "randomness",
+          "type": "uint256"
+        }
+      ],
+      "name": "rawFulfillRandomness",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "_keyHash",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_fee",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_seed",
+          "type": "uint256"
+        }
+      ],
+      "name": "requestRandomness",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "requestId",
+          "type": "bytes32"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "allSourcePaths": {
+    "0": "/Users/patrick/.brownie/packages/alphachainio/chainlink-contracts@1.1.2/contracts/src/v0.6/VRFConsumerBase.sol",
+    "1": "/Users/patrick/.brownie/packages/alphachainio/chainlink-contracts@1.1.2/contracts/src/v0.6/VRFRequestIDBase.sol",
+    "2": "/Users/patrick/.brownie/packages/alphachainio/chainlink-contracts@1.1.2/contracts/src/v0.6/interfaces/LinkTokenInterface.sol",
+    "3": "/Users/patrick/.brownie/packages/alphachainio/chainlink-contracts@1.1.2/contracts/src/v0.6/vendor/SafeMath.sol",
+    "4": "contracts/VRFConsumer.sol"
+  },
+  "ast": {
+    "absolutePath": "contracts/VRFConsumer.sol",
+    "exportedSymbols": {
+      "VRFConsumer": [
+        80
+      ]
+    },
+    "id": 81,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1,
+        "literals": [
+          "solidity",
+          "0.6",
+          ".6"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "1:22:4"
+      },
+      {
+        "absolutePath": "/Users/patrick/.brownie/packages/alphachainio/chainlink-contracts@1.1.2/contracts/src/v0.6/VRFConsumerBase.sol",
+        "file": "@chainlink/contracts/src/v0.6/VRFConsumerBase.sol",
+        "id": 2,
+        "nodeType": "ImportDirective",
+        "scope": 81,
+        "sourceUnit": 321,
+        "src": "25:59:4",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 3,
+              "name": "VRFConsumerBase",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 320,
+              "src": "110:15:4",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_VRFConsumerBase_$320",
+                "typeString": "contract VRFConsumerBase"
+              }
+            },
+            "id": 4,
+            "nodeType": "InheritanceSpecifier",
+            "src": "110:15:4"
+          }
+        ],
+        "contractDependencies": [
+          320,
+          465
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 80,
+        "linearizedBaseContracts": [
+          80,
+          320,
+          465
+        ],
+        "name": "VRFConsumer",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 6,
+            "mutability": "mutable",
+            "name": "keyHash",
+            "nodeType": "VariableDeclaration",
+            "overrides": null,
+            "scope": 80,
+            "src": "137:24:4",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bytes32",
+              "typeString": "bytes32"
+            },
+            "typeName": {
+              "id": 5,
+              "name": "bytes32",
+              "nodeType": "ElementaryTypeName",
+              "src": "137:7:4",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bytes32",
+                "typeString": "bytes32"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 8,
+            "mutability": "mutable",
+            "name": "fee",
+            "nodeType": "VariableDeclaration",
+            "overrides": null,
+            "scope": 80,
+            "src": "167:20:4",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 7,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "167:7:4",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "functionSelector": "42619f66",
+            "id": 10,
+            "mutability": "mutable",
+            "name": "randomResult",
+            "nodeType": "VariableDeclaration",
+            "overrides": null,
+            "scope": 80,
+            "src": "198:27:4",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 9,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "198:7:4",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 36,
+              "nodeType": "Block",
+              "src": "788:77:4",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 26,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 24,
+                      "name": "keyHash",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 6,
+                      "src": "798:7:4",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes32",
+                        "typeString": "bytes32"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 25,
+                      "name": "_keyhash",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 13,
+                      "src": "808:8:4",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes32",
+                        "typeString": "bytes32"
+                      }
+                    },
+                    "src": "798:18:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "id": 27,
+                  "nodeType": "ExpressionStatement",
+                  "src": "798:18:4"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 34,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 28,
+                      "name": "fee",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 8,
+                      "src": "826:3:4",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "commonType": {
+                        "typeIdentifier": "t_rational_100000000000000000_by_1",
+                        "typeString": "int_const 100000000000000000"
+                      },
+                      "id": 33,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "lValueRequested": false,
+                      "leftExpression": {
+                        "argumentTypes": null,
+                        "hexValue": "302e31",
+                        "id": 29,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "number",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "832:3:4",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_rational_1_by_10",
+                          "typeString": "rational_const 1 / 10"
+                        },
+                        "value": "0.1"
+                      },
+                      "nodeType": "BinaryOperation",
+                      "operator": "*",
+                      "rightExpression": {
+                        "argumentTypes": null,
+                        "commonType": {
+                          "typeIdentifier": "t_rational_1000000000000000000_by_1",
+                          "typeString": "int_const 1000000000000000000"
+                        },
+                        "id": 32,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "argumentTypes": null,
+                          "hexValue": "3130",
+                          "id": 30,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "number",
+                          "lValueRequested": false,
+                          "nodeType": "Literal",
+                          "src": "838:2:4",
+                          "subdenomination": null,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_rational_10_by_1",
+                            "typeString": "int_const 10"
+                          },
+                          "value": "10"
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "**",
+                        "rightExpression": {
+                          "argumentTypes": null,
+                          "hexValue": "3138",
+                          "id": 31,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "number",
+                          "lValueRequested": false,
+                          "nodeType": "Literal",
+                          "src": "844:2:4",
+                          "subdenomination": null,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_rational_18_by_1",
+                            "typeString": "int_const 18"
+                          },
+                          "value": "18"
+                        },
+                        "src": "838:8:4",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_rational_1000000000000000000_by_1",
+                          "typeString": "int_const 1000000000000000000"
+                        }
+                      },
+                      "src": "832:14:4",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_rational_100000000000000000_by_1",
+                        "typeString": "int_const 100000000000000000"
+                      }
+                    },
+                    "src": "826:20:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 35,
+                  "nodeType": "ExpressionStatement",
+                  "src": "826:20:4"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 11,
+              "nodeType": "StructuredDocumentation",
+              "src": "236:339:4",
+              "text": "Constructor inherits VRFConsumerBase\n\n     * Network: Kovan\nChainlink VRF Coordinator address: 0xdD3782915140c8f3b190B5D67eAc6dc5760C46E9\nLINK token address:                0xa36085F69e2889c224210F603D836748e7dC0088\nKey Hash: 0x6c3699283bda56ad74f6b855546325b68d482e983852a7a82979cc4807b641f4"
+            },
+            "id": 37,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [
+              {
+                "arguments": [
+                  {
+                    "argumentTypes": null,
+                    "id": 20,
+                    "name": "_vrfCoordinator",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 15,
+                    "src": "693:15:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  {
+                    "argumentTypes": null,
+                    "id": 21,
+                    "name": "_linkToken",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 17,
+                    "src": "741:10:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  }
+                ],
+                "id": 22,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 19,
+                  "name": "VRFConsumerBase",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 320,
+                  "src": "664:15:4",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_type$_t_contract$_VRFConsumerBase_$320_$",
+                    "typeString": "type(contract VRFConsumerBase)"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "664:112:4"
+              }
+            ],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 18,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 13,
+                  "mutability": "mutable",
+                  "name": "_keyhash",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 37,
+                  "src": "592:16:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 12,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "592:7:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 15,
+                  "mutability": "mutable",
+                  "name": "_vrfCoordinator",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 37,
+                  "src": "610:23:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 14,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "610:7:4",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 17,
+                  "mutability": "mutable",
+                  "name": "_linkToken",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 37,
+                  "src": "635:18:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 16,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "635:7:4",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "591:63:4"
+            },
+            "returnParameters": {
+              "id": 23,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "788:0:4"
+            },
+            "scope": 80,
+            "src": "580:285:4",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 64,
+              "nodeType": "Block",
+              "src": "1031:175:4",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "commonType": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        "id": 54,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "argumentTypes": null,
+                          "arguments": [
+                            {
+                              "argumentTypes": null,
+                              "arguments": [
+                                {
+                                  "argumentTypes": null,
+                                  "id": 50,
+                                  "name": "this",
+                                  "nodeType": "Identifier",
+                                  "overloadedDeclarations": [],
+                                  "referencedDeclaration": -28,
+                                  "src": "1072:4:4",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_contract$_VRFConsumer_$80",
+                                    "typeString": "contract VRFConsumer"
+                                  }
+                                }
+                              ],
+                              "expression": {
+                                "argumentTypes": [
+                                  {
+                                    "typeIdentifier": "t_contract$_VRFConsumer_$80",
+                                    "typeString": "contract VRFConsumer"
+                                  }
+                                ],
+                                "id": 49,
+                                "isConstant": false,
+                                "isLValue": false,
+                                "isPure": true,
+                                "lValueRequested": false,
+                                "nodeType": "ElementaryTypeNameExpression",
+                                "src": "1064:7:4",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_type$_t_address_$",
+                                  "typeString": "type(address)"
+                                },
+                                "typeName": {
+                                  "id": 48,
+                                  "name": "address",
+                                  "nodeType": "ElementaryTypeName",
+                                  "src": "1064:7:4",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": null,
+                                    "typeString": null
+                                  }
+                                }
+                              },
+                              "id": 51,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "kind": "typeConversion",
+                              "lValueRequested": false,
+                              "names": [],
+                              "nodeType": "FunctionCall",
+                              "src": "1064:13:4",
+                              "tryCall": false,
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_address",
+                                "typeString": "address"
+                              }
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_address",
+                                "typeString": "address"
+                              }
+                            ],
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 46,
+                              "name": "LINK",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 274,
+                              "src": "1049:4:4",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_contract$_LinkTokenInterface_$415",
+                                "typeString": "contract LinkTokenInterface"
+                              }
+                            },
+                            "id": 47,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "balanceOf",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": 347,
+                            "src": "1049:14:4",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_function_external_view$_t_address_$returns$_t_uint256_$",
+                              "typeString": "function (address) view external returns (uint256)"
+                            }
+                          },
+                          "id": 52,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "functionCall",
+                          "lValueRequested": false,
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "1049:29:4",
+                          "tryCall": false,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": ">=",
+                        "rightExpression": {
+                          "argumentTypes": null,
+                          "id": 53,
+                          "name": "fee",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 8,
+                          "src": "1082:3:4",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "src": "1049:36:4",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "4e6f7420656e6f756768204c494e4b202d2066696c6c20636f6e7472616374207769746820666175636574",
+                        "id": 55,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1087:45:4",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_4bb3a9958b8c6e95beec57f36a0352593367170b4a84072c44b036bee3a36e74",
+                          "typeString": "literal_string \"Not enough LINK - fill contract with faucet\""
+                        },
+                        "value": "Not enough LINK - fill contract with faucet"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_4bb3a9958b8c6e95beec57f36a0352593367170b4a84072c44b036bee3a36e74",
+                          "typeString": "literal_string \"Not enough LINK - fill contract with faucet\""
+                        }
+                      ],
+                      "id": 45,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        -18,
+                        -18
+                      ],
+                      "referencedDeclaration": -18,
+                      "src": "1041:7:4",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 56,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1041:92:4",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 57,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1041:92:4"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 59,
+                        "name": "keyHash",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 6,
+                        "src": "1168:7:4",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 60,
+                        "name": "fee",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 8,
+                        "src": "1177:3:4",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 61,
+                        "name": "userProvidedSeed",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 40,
+                        "src": "1182:16:4",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "id": 58,
+                      "name": "requestRandomness",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 272,
+                      "src": "1150:17:4",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_bytes32_$_t_uint256_$_t_uint256_$returns$_t_bytes32_$",
+                        "typeString": "function (bytes32,uint256,uint256) returns (bytes32)"
+                      }
+                    },
+                    "id": 62,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1150:49:4",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "functionReturnParameters": 44,
+                  "id": 63,
+                  "nodeType": "Return",
+                  "src": "1143:56:4"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 38,
+              "nodeType": "StructuredDocumentation",
+              "src": "875:65:4",
+              "text": "Requests randomness from a user-provided seed"
+            },
+            "functionSelector": "b37217a4",
+            "id": 65,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getRandomNumber",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 41,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 40,
+                  "mutability": "mutable",
+                  "name": "userProvidedSeed",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 65,
+                  "src": "970:24:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 39,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "970:7:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "969:26:4"
+            },
+            "returnParameters": {
+              "id": 44,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 43,
+                  "mutability": "mutable",
+                  "name": "requestId",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 65,
+                  "src": "1012:17:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 42,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1012:7:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1011:19:4"
+            },
+            "scope": 80,
+            "src": "945:261:4",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "baseFunctions": [
+              217
+            ],
+            "body": {
+              "id": 78,
+              "nodeType": "Block",
+              "src": "1361:42:4",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 76,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 74,
+                      "name": "randomResult",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 10,
+                      "src": "1371:12:4",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 75,
+                      "name": "randomness",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 70,
+                      "src": "1386:10:4",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "1371:25:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 77,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1371:25:4"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 66,
+              "nodeType": "StructuredDocumentation",
+              "src": "1212:60:4",
+              "text": "Callback function used by VRF Coordinator"
+            },
+            "id": 79,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "fulfillRandomness",
+            "nodeType": "FunctionDefinition",
+            "overrides": {
+              "id": 72,
+              "nodeType": "OverrideSpecifier",
+              "overrides": [],
+              "src": "1352:8:4"
+            },
+            "parameters": {
+              "id": 71,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 68,
+                  "mutability": "mutable",
+                  "name": "requestId",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 79,
+                  "src": "1304:17:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 67,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1304:7:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 70,
+                  "mutability": "mutable",
+                  "name": "randomness",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 79,
+                  "src": "1323:18:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 69,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1323:7:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1303:39:4"
+            },
+            "returnParameters": {
+              "id": 73,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1361:0:4"
+            },
+            "scope": 80,
+            "src": "1277:126:4",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "internal"
+          }
+        ],
+        "scope": 81,
+        "src": "86:1319:4"
+      }
+    ],
+    "src": "1:1404:4"
+  },
+  "bytecode": "60c060405234801561001057600080fd5b506040516106353803806106358339818101604052606081101561003357600080fd5b50805160208201516040909201516001600160601b0319606093841b811660a052921b90911660805260015567016345785d8a000060025560805160601c60a05160601c61059761009e6000398061010f52806102cd5250806101a8528061029e52506105976000f3fe608060405234801561001057600080fd5b50600436106100575760003560e01c806342619f661461005c57806394985ddd146100765780639e317f121461009b578063b37217a4146100b8578063dc6cfe10146100d5575b600080fd5b6100646100fe565b60408051918252519081900360200190f35b6100996004803603604081101561008c57600080fd5b5080359060200135610104565b005b610064600480360360208110156100b157600080fd5b503561018f565b610064600480360360208110156100ce57600080fd5b50356101a1565b610064600480360360608110156100eb57600080fd5b508035906020810135906040013561029a565b60035481565b336001600160a01b037f00000000000000000000000000000000000000000000000000000000000000001614610181576040805162461bcd60e51b815260206004820152601f60248201527f4f6e6c7920565246436f6f7264696e61746f722063616e2066756c66696c6c00604482015290519081900360640190fd5b61018b828261045c565b5050565b60006020819052908152604090205481565b60006002547f00000000000000000000000000000000000000000000000000000000000000006001600160a01b03166370a08231306040518263ffffffff1660e01b815260040180826001600160a01b03166001600160a01b0316815260200191505060206040518083038186803b15801561021c57600080fd5b505afa158015610230573d6000803e3d6000fd5b505050506040513d602081101561024657600080fd5b505110156102855760405162461bcd60e51b815260040180806020018281038252602b815260200180610537602b913960400191505060405180910390fd5b6102946001546002548461029a565b92915050565b60007f00000000000000000000000000000000000000000000000000000000000000006001600160a01b0316634000aea07f000000000000000000000000000000000000000000000000000000000000000085878660405160200180838152602001828152602001925050506040516020818303038152906040526040518463ffffffff1660e01b815260040180846001600160a01b03166001600160a01b0316815260200183815260200180602001828103825283818151815260200191508051906020019080838360005b8381101561037f578181015183820152602001610367565b50505050905090810190601f1680156103ac5780820380516001836020036101000a031916815260200191505b50945050505050602060405180830381600087803b1580156103cd57600080fd5b505af11580156103e1573d6000803e3d6000fd5b505050506040513d60208110156103f757600080fd5b505060008481526020819052604081205461041790869085903090610462565b60008681526020819052604090205490915061043a90600163ffffffff6104a916565b600086815260208190526040902055610453858261050a565b95945050505050565b60035550565b60408051602080820196909652808201949094526001600160a01b039290921660608401526080808401919091528151808403909101815260a09092019052805191012090565b600082820183811015610503576040805162461bcd60e51b815260206004820152601b60248201527f536166654d6174683a206164646974696f6e206f766572666c6f770000000000604482015290519081900360640190fd5b9392505050565b60408051602080820194909452808201929092528051808303820181526060909201905280519101209056fe4e6f7420656e6f756768204c494e4b202d2066696c6c20636f6e7472616374207769746820666175636574a264697066735822122031eb3ec726c32b3ad85b66555e6ee074d868cecc3e4889eea77a227b02a4145364736f6c63430006060033",
+  "bytecodeSha1": "381da532cf629be9dd09a19881491f8ddf045863",
+  "compiler": {
+    "evm_version": "istanbul",
+    "optimizer": {
+      "enabled": true,
+      "runs": 200
+    },
+    "version": "0.6.6+commit.6c089d02"
+  },
+  "contractName": "VRFConsumer",
+  "coverageMap": {
+    "branches": {
+      "0": {
+        "VRFConsumerBase.rawFulfillRandomness": {
+          "14": [
+            7336,
+            7364,
+            true
+          ]
+        }
+      },
+      "1": {},
+      "2": {},
+      "3": {
+        "SafeMath.add": {
+          "13": [
+            926,
+            932,
+            true
+          ]
+        }
+      },
+      "4": {
+        "VRFConsumer.getRandomNumber": {
+          "12": [
+            1049,
+            1085,
+            true
+          ]
+        }
+      }
+    },
+    "statements": {
+      "0": {
+        "VRFConsumerBase.rawFulfillRandomness": {
+          "0": [
+            7328,
+            7400
+          ],
+          "1": [
+            7406,
+            7446
+          ]
+        },
+        "VRFConsumerBase.requestRandomness": {
+          "4": [
+            5779,
+            5850
+          ],
+          "5": [
+            6516,
+            6558
+          ],
+          "6": [
+            6564,
+            6603
+          ]
+        }
+      },
+      "1": {
+        "VRFRequestIDBase.makeRequestId": {
+          "11": [
+            1483,
+            1542
+          ]
+        },
+        "VRFRequestIDBase.makeVRFInputSeed": {
+          "8": [
+            912,
+            991
+          ]
+        }
+      },
+      "2": {},
+      "3": {
+        "SafeMath.add": {
+          "9": [
+            918,
+            964
+          ],
+          "10": [
+            971,
+            979
+          ]
+        }
+      },
+      "4": {
+        "VRFConsumer.fulfillRandomness": {
+          "7": [
+            1371,
+            1396
+          ]
+        },
+        "VRFConsumer.getRandomNumber": {
+          "2": [
+            1041,
+            1133
+          ],
+          "3": [
+            1143,
+            1199
+          ]
+        }
+      }
+    }
+  },
+  "dependencies": [
+    "alphachainio/chainlink-contracts@1.1.2/LinkTokenInterface",
+    "alphachainio/chainlink-contracts@1.1.2/SafeMath",
+    "alphachainio/chainlink-contracts@1.1.2/VRFConsumerBase",
+    "alphachainio/chainlink-contracts@1.1.2/VRFRequestIDBase"
+  ],
+  "deployedBytecode": "608060405234801561001057600080fd5b50600436106100575760003560e01c806342619f661461005c57806394985ddd146100765780639e317f121461009b578063b37217a4146100b8578063dc6cfe10146100d5575b600080fd5b6100646100fe565b60408051918252519081900360200190f35b6100996004803603604081101561008c57600080fd5b5080359060200135610104565b005b610064600480360360208110156100b157600080fd5b503561018f565b610064600480360360208110156100ce57600080fd5b50356101a1565b610064600480360360608110156100eb57600080fd5b508035906020810135906040013561029a565b60035481565b336001600160a01b037f00000000000000000000000000000000000000000000000000000000000000001614610181576040805162461bcd60e51b815260206004820152601f60248201527f4f6e6c7920565246436f6f7264696e61746f722063616e2066756c66696c6c00604482015290519081900360640190fd5b61018b828261045c565b5050565b60006020819052908152604090205481565b60006002547f00000000000000000000000000000000000000000000000000000000000000006001600160a01b03166370a08231306040518263ffffffff1660e01b815260040180826001600160a01b03166001600160a01b0316815260200191505060206040518083038186803b15801561021c57600080fd5b505afa158015610230573d6000803e3d6000fd5b505050506040513d602081101561024657600080fd5b505110156102855760405162461bcd60e51b815260040180806020018281038252602b815260200180610537602b913960400191505060405180910390fd5b6102946001546002548461029a565b92915050565b60007f00000000000000000000000000000000000000000000000000000000000000006001600160a01b0316634000aea07f000000000000000000000000000000000000000000000000000000000000000085878660405160200180838152602001828152602001925050506040516020818303038152906040526040518463ffffffff1660e01b815260040180846001600160a01b03166001600160a01b0316815260200183815260200180602001828103825283818151815260200191508051906020019080838360005b8381101561037f578181015183820152602001610367565b50505050905090810190601f1680156103ac5780820380516001836020036101000a031916815260200191505b50945050505050602060405180830381600087803b1580156103cd57600080fd5b505af11580156103e1573d6000803e3d6000fd5b505050506040513d60208110156103f757600080fd5b505060008481526020819052604081205461041790869085903090610462565b60008681526020819052604090205490915061043a90600163ffffffff6104a916565b600086815260208190526040902055610453858261050a565b95945050505050565b60035550565b60408051602080820196909652808201949094526001600160a01b039290921660608401526080808401919091528151808403909101815260a09092019052805191012090565b600082820183811015610503576040805162461bcd60e51b815260206004820152601b60248201527f536166654d6174683a206164646974696f6e206f766572666c6f770000000000604482015290519081900360640190fd5b9392505050565b60408051602080820194909452808201929092528051808303820181526060909201905280519101209056fe4e6f7420656e6f756768204c494e4b202d2066696c6c20636f6e7472616374207769746820666175636574a264697066735822122031eb3ec726c32b3ad85b66555e6ee074d868cecc3e4889eea77a227b02a4145364736f6c63430006060033",
+  "deployedSourceMap": "86:1319:4:-:0;;;;5:9:-1;2:2;;;27:1;24;17:12;2:2;86:1319:4;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;12:1:-1;9;2:12;198:27:4;;;:::i;:::-;;;;;;;;;;;;;;;;7244:207:0;;;;;;15:2:-1;10:3;7:11;4:2;;;31:1;28;21:12;4:2;-1:-1;7244:207:0;;;;;;;:::i;:::-;;6838:67;;;;;;15:2:-1;10:3;7:11;4:2;;;31:1;28;21:12;4:2;-1:-1;6838:67:0;;:::i;945:261:4:-;;;;;;15:2:-1;10:3;7:11;4:2;;;31:1;28;21:12;4:2;-1:-1;945:261:4;;:::i;5658:950:0:-;;;;;;15:2:-1;10:3;7:11;4:2;;;31:1;28;21:12;4:2;-1:-1;5658:950:0;;;;;;;;;;;;:::i;198:27:4:-;;;;:::o;7244:207:0:-;7336:10;-1:-1:-1;;;;;7350:14:0;7336:28;;7328:72;;;;;-1:-1:-1;;;7328:72:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;7406:40;7424:9;7435:10;7406:17;:40::i;:::-;7244:207;;:::o;6838:67::-;;;;;;;;;;;;;;:::o;945:261:4:-;1012:17;1082:3;;1049:4;-1:-1:-1;;;;;1049:14:4;;1072:4;1049:29;;;;;;;;;;;;;-1:-1:-1;;;;;1049:29:4;-1:-1:-1;;;;;1049:29:4;;;;;;;;;;;;;;;;;;;5:9:-1;2:2;;;27:1;24;17:12;2:2;1049:29:4;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;1049:29:4;;;;;;;15:2:-1;10:3;7:11;4:2;;;31:1;28;21:12;4:2;-1:-1;1049:29:4;:36;;1041:92;;;;-1:-1:-1;;;1041:92:4;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1150:49;1168:7;;1177:3;;1182:16;1150:17;:49::i;:::-;1143:56;945:261;-1:-1:-1;;945:261:4:o;5658:950:0:-;5752:17;5779:4;-1:-1:-1;;;;;5779:20:0;;5800:14;5816:4;5833:8;5843:5;5822:27;;;;;;;;;;;;;;;;;;;;;49:4:-1;39:7;30;26:21;22:32;13:7;6:49;5822:27:0;;;5779:71;;;;;;;;;;;;;-1:-1:-1;;;;;5779:71:0;-1:-1:-1;;;;;5779:71:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;90:11;;;84:18;71:11;;;64:39;52:2;45:10;8:100;;;12:14;5779:71:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;5:9:-1;2:2;;;27:1;24;17:12;2:2;5779:71:0;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;5779:71:0;;;;;;;15:2:-1;10:3;7:11;4:2;;;31:1;28;21:12;4:2;-1:-1;;6081:15:0;6149:16;;;5779:71;6149:16;;;;;;;6100:66;;6117:8;;6127:5;;6142:4;;6100:16;:66::i;:::-;6535:6;:16;;;;;;;;;;;6081:85;;-1:-1:-1;6535:23:0;;6556:1;6535:23;:20;:23;:::i;:::-;6516:6;:16;;;;;;;;;;:42;6571:32;6523:8;6595:7;6571:13;:32::i;:::-;6564:39;5658:950;-1:-1:-1;;;;;5658:950:0:o;1277:126:4:-;1371:12;:25;-1:-1:-1;1277:126:4:o;765:231:1:-;938:51;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;938:51:1;;;;;;;;;;;;;;;;;;26:21:-1;;;22:32;;;6:49;;938:51:1;;;;;;928:62;;;;;;765:231::o;822:162:3:-;880:7;907:5;;;926:6;;;;918:46;;;;;-1:-1:-1;;;918:46:3;;;;;;;;;;;;;;;;;;;;;;;;;;;;978:1;822:162;-1:-1:-1;;;822:162:3:o;1376:171:1:-;1500:41;;;;;;;;;;;;;;;;;;;;26:21:-1;;;22:32;;6:49;;1500:41:1;;;;;;1490:52;;;;;;1376:171::o",
+  "language": "Solidity",
+  "natspec": {
+    "methods": {
+      "getRandomNumber(uint256)": {
+        "notice": "Requests randomness from a user-provided seed"
+      },
+      "requestRandomness(bytes32,uint256,uint256)": {
+        "details": "See \"SECURITY CONSIDERATIONS\" above for more information on _seed.The fulfillRandomness method receives the output, once it's providedby the Oracle, and verified by the vrfCoordinator.The _keyHash must already be registered with the VRFCoordinator, andthe _fee must exceed the fee specified during registration of the_keyHash.The returned requestId can be used to distinguish responses to *concurrent requests. It is passed as the first argument tofulfillRandomness.",
+        "notice": "requestRandomness initiates a request for VRF output given _seed",
+        "params": {
+          "_fee": "The amount of LINK to send with the request",
+          "_keyHash": "ID of public key against which randomness is generated",
+          "_seed": "seed mixed into the input of the VRF"
+        },
+        "returns": {
+          "requestId": "unique ID for this request"
+        }
+      }
+    }
+  },
+  "offset": [
+    86,
+    1405
+  ],
+  "opcodes": "PUSH1 0x80 PUSH1 0x40 MSTORE CALLVALUE DUP1 ISZERO PUSH2 0x10 JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP PUSH1 0x4 CALLDATASIZE LT PUSH2 0x57 JUMPI PUSH1 0x0 CALLDATALOAD PUSH1 0xE0 SHR DUP1 PUSH4 0x42619F66 EQ PUSH2 0x5C JUMPI DUP1 PUSH4 0x94985DDD EQ PUSH2 0x76 JUMPI DUP1 PUSH4 0x9E317F12 EQ PUSH2 0x9B JUMPI DUP1 PUSH4 0xB37217A4 EQ PUSH2 0xB8 JUMPI DUP1 PUSH4 0xDC6CFE10 EQ PUSH2 0xD5 JUMPI JUMPDEST PUSH1 0x0 DUP1 REVERT JUMPDEST PUSH2 0x64 PUSH2 0xFE JUMP JUMPDEST PUSH1 0x40 DUP1 MLOAD SWAP2 DUP3 MSTORE MLOAD SWAP1 DUP2 SWAP1 SUB PUSH1 0x20 ADD SWAP1 RETURN JUMPDEST PUSH2 0x99 PUSH1 0x4 DUP1 CALLDATASIZE SUB PUSH1 0x40 DUP2 LT ISZERO PUSH2 0x8C JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP DUP1 CALLDATALOAD SWAP1 PUSH1 0x20 ADD CALLDATALOAD PUSH2 0x104 JUMP JUMPDEST STOP JUMPDEST PUSH2 0x64 PUSH1 0x4 DUP1 CALLDATASIZE SUB PUSH1 0x20 DUP2 LT ISZERO PUSH2 0xB1 JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP CALLDATALOAD PUSH2 0x18F JUMP JUMPDEST PUSH2 0x64 PUSH1 0x4 DUP1 CALLDATASIZE SUB PUSH1 0x20 DUP2 LT ISZERO PUSH2 0xCE JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP CALLDATALOAD PUSH2 0x1A1 JUMP JUMPDEST PUSH2 0x64 PUSH1 0x4 DUP1 CALLDATASIZE SUB PUSH1 0x60 DUP2 LT ISZERO PUSH2 0xEB JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP DUP1 CALLDATALOAD SWAP1 PUSH1 0x20 DUP2 ADD CALLDATALOAD SWAP1 PUSH1 0x40 ADD CALLDATALOAD PUSH2 0x29A JUMP JUMPDEST PUSH1 0x3 SLOAD DUP2 JUMP JUMPDEST CALLER PUSH1 0x1 PUSH1 0x1 PUSH1 0xA0 SHL SUB PUSH32 0x0 AND EQ PUSH2 0x181 JUMPI PUSH1 0x40 DUP1 MLOAD PUSH3 0x461BCD PUSH1 0xE5 SHL DUP2 MSTORE PUSH1 0x20 PUSH1 0x4 DUP3 ADD MSTORE PUSH1 0x1F PUSH1 0x24 DUP3 ADD MSTORE PUSH32 0x4F6E6C7920565246436F6F7264696E61746F722063616E2066756C66696C6C00 PUSH1 0x44 DUP3 ADD MSTORE SWAP1 MLOAD SWAP1 DUP2 SWAP1 SUB PUSH1 0x64 ADD SWAP1 REVERT JUMPDEST PUSH2 0x18B DUP3 DUP3 PUSH2 0x45C JUMP JUMPDEST POP POP JUMP JUMPDEST PUSH1 0x0 PUSH1 0x20 DUP2 SWAP1 MSTORE SWAP1 DUP2 MSTORE PUSH1 0x40 SWAP1 KECCAK256 SLOAD DUP2 JUMP JUMPDEST PUSH1 0x0 PUSH1 0x2 SLOAD PUSH32 0x0 PUSH1 0x1 PUSH1 0x1 PUSH1 0xA0 SHL SUB AND PUSH4 0x70A08231 ADDRESS PUSH1 0x40 MLOAD DUP3 PUSH4 0xFFFFFFFF AND PUSH1 0xE0 SHL DUP2 MSTORE PUSH1 0x4 ADD DUP1 DUP3 PUSH1 0x1 PUSH1 0x1 PUSH1 0xA0 SHL SUB AND PUSH1 0x1 PUSH1 0x1 PUSH1 0xA0 SHL SUB AND DUP2 MSTORE PUSH1 0x20 ADD SWAP2 POP POP PUSH1 0x20 PUSH1 0x40 MLOAD DUP1 DUP4 SUB DUP2 DUP7 DUP1 EXTCODESIZE ISZERO DUP1 ISZERO PUSH2 0x21C JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP GAS STATICCALL ISZERO DUP1 ISZERO PUSH2 0x230 JUMPI RETURNDATASIZE PUSH1 0x0 DUP1 RETURNDATACOPY RETURNDATASIZE PUSH1 0x0 REVERT JUMPDEST POP POP POP POP PUSH1 0x40 MLOAD RETURNDATASIZE PUSH1 0x20 DUP2 LT ISZERO PUSH2 0x246 JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP MLOAD LT ISZERO PUSH2 0x285 JUMPI PUSH1 0x40 MLOAD PUSH3 0x461BCD PUSH1 0xE5 SHL DUP2 MSTORE PUSH1 0x4 ADD DUP1 DUP1 PUSH1 0x20 ADD DUP3 DUP2 SUB DUP3 MSTORE PUSH1 0x2B DUP2 MSTORE PUSH1 0x20 ADD DUP1 PUSH2 0x537 PUSH1 0x2B SWAP2 CODECOPY PUSH1 0x40 ADD SWAP2 POP POP PUSH1 0x40 MLOAD DUP1 SWAP2 SUB SWAP1 REVERT JUMPDEST PUSH2 0x294 PUSH1 0x1 SLOAD PUSH1 0x2 SLOAD DUP5 PUSH2 0x29A JUMP JUMPDEST SWAP3 SWAP2 POP POP JUMP JUMPDEST PUSH1 0x0 PUSH32 0x0 PUSH1 0x1 PUSH1 0x1 PUSH1 0xA0 SHL SUB AND PUSH4 0x4000AEA0 PUSH32 0x0 DUP6 DUP8 DUP7 PUSH1 0x40 MLOAD PUSH1 0x20 ADD DUP1 DUP4 DUP2 MSTORE PUSH1 0x20 ADD DUP3 DUP2 MSTORE PUSH1 0x20 ADD SWAP3 POP POP POP PUSH1 0x40 MLOAD PUSH1 0x20 DUP2 DUP4 SUB SUB DUP2 MSTORE SWAP1 PUSH1 0x40 MSTORE PUSH1 0x40 MLOAD DUP5 PUSH4 0xFFFFFFFF AND PUSH1 0xE0 SHL DUP2 MSTORE PUSH1 0x4 ADD DUP1 DUP5 PUSH1 0x1 PUSH1 0x1 PUSH1 0xA0 SHL SUB AND PUSH1 0x1 PUSH1 0x1 PUSH1 0xA0 SHL SUB AND DUP2 MSTORE PUSH1 0x20 ADD DUP4 DUP2 MSTORE PUSH1 0x20 ADD DUP1 PUSH1 0x20 ADD DUP3 DUP2 SUB DUP3 MSTORE DUP4 DUP2 DUP2 MLOAD DUP2 MSTORE PUSH1 0x20 ADD SWAP2 POP DUP1 MLOAD SWAP1 PUSH1 0x20 ADD SWAP1 DUP1 DUP4 DUP4 PUSH1 0x0 JUMPDEST DUP4 DUP2 LT ISZERO PUSH2 0x37F JUMPI DUP2 DUP2 ADD MLOAD DUP4 DUP3 ADD MSTORE PUSH1 0x20 ADD PUSH2 0x367 JUMP JUMPDEST POP POP POP POP SWAP1 POP SWAP1 DUP2 ADD SWAP1 PUSH1 0x1F AND DUP1 ISZERO PUSH2 0x3AC JUMPI DUP1 DUP3 SUB DUP1 MLOAD PUSH1 0x1 DUP4 PUSH1 0x20 SUB PUSH2 0x100 EXP SUB NOT AND DUP2 MSTORE PUSH1 0x20 ADD SWAP2 POP JUMPDEST POP SWAP5 POP POP POP POP POP PUSH1 0x20 PUSH1 0x40 MLOAD DUP1 DUP4 SUB DUP2 PUSH1 0x0 DUP8 DUP1 EXTCODESIZE ISZERO DUP1 ISZERO PUSH2 0x3CD JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP GAS CALL ISZERO DUP1 ISZERO PUSH2 0x3E1 JUMPI RETURNDATASIZE PUSH1 0x0 DUP1 RETURNDATACOPY RETURNDATASIZE PUSH1 0x0 REVERT JUMPDEST POP POP POP POP PUSH1 0x40 MLOAD RETURNDATASIZE PUSH1 0x20 DUP2 LT ISZERO PUSH2 0x3F7 JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP POP PUSH1 0x0 DUP5 DUP2 MSTORE PUSH1 0x20 DUP2 SWAP1 MSTORE PUSH1 0x40 DUP2 KECCAK256 SLOAD PUSH2 0x417 SWAP1 DUP7 SWAP1 DUP6 SWAP1 ADDRESS SWAP1 PUSH2 0x462 JUMP JUMPDEST PUSH1 0x0 DUP7 DUP2 MSTORE PUSH1 0x20 DUP2 SWAP1 MSTORE PUSH1 0x40 SWAP1 KECCAK256 SLOAD SWAP1 SWAP2 POP PUSH2 0x43A SWAP1 PUSH1 0x1 PUSH4 0xFFFFFFFF PUSH2 0x4A9 AND JUMP JUMPDEST PUSH1 0x0 DUP7 DUP2 MSTORE PUSH1 0x20 DUP2 SWAP1 MSTORE PUSH1 0x40 SWAP1 KECCAK256 SSTORE PUSH2 0x453 DUP6 DUP3 PUSH2 0x50A JUMP JUMPDEST SWAP6 SWAP5 POP POP POP POP POP JUMP JUMPDEST PUSH1 0x3 SSTORE POP JUMP JUMPDEST PUSH1 0x40 DUP1 MLOAD PUSH1 0x20 DUP1 DUP3 ADD SWAP7 SWAP1 SWAP7 MSTORE DUP1 DUP3 ADD SWAP5 SWAP1 SWAP5 MSTORE PUSH1 0x1 PUSH1 0x1 PUSH1 0xA0 SHL SUB SWAP3 SWAP1 SWAP3 AND PUSH1 0x60 DUP5 ADD MSTORE PUSH1 0x80 DUP1 DUP5 ADD SWAP2 SWAP1 SWAP2 MSTORE DUP2 MLOAD DUP1 DUP5 SUB SWAP1 SWAP2 ADD DUP2 MSTORE PUSH1 0xA0 SWAP1 SWAP3 ADD SWAP1 MSTORE DUP1 MLOAD SWAP2 ADD KECCAK256 SWAP1 JUMP JUMPDEST PUSH1 0x0 DUP3 DUP3 ADD DUP4 DUP2 LT ISZERO PUSH2 0x503 JUMPI PUSH1 0x40 DUP1 MLOAD PUSH3 0x461BCD PUSH1 0xE5 SHL DUP2 MSTORE PUSH1 0x20 PUSH1 0x4 DUP3 ADD MSTORE PUSH1 0x1B PUSH1 0x24 DUP3 ADD MSTORE PUSH32 0x536166654D6174683A206164646974696F6E206F766572666C6F770000000000 PUSH1 0x44 DUP3 ADD MSTORE SWAP1 MLOAD SWAP1 DUP2 SWAP1 SUB PUSH1 0x64 ADD SWAP1 REVERT JUMPDEST SWAP4 SWAP3 POP POP POP JUMP JUMPDEST PUSH1 0x40 DUP1 MLOAD PUSH1 0x20 DUP1 DUP3 ADD SWAP5 SWAP1 SWAP5 MSTORE DUP1 DUP3 ADD SWAP3 SWAP1 SWAP3 MSTORE DUP1 MLOAD DUP1 DUP4 SUB DUP3 ADD DUP2 MSTORE PUSH1 0x60 SWAP1 SWAP3 ADD SWAP1 MSTORE DUP1 MLOAD SWAP2 ADD KECCAK256 SWAP1 JUMP INVALID 0x4E PUSH16 0x7420656E6F756768204C494E4B202D20 PUSH7 0x696C6C20636F6E PUSH21 0x72616374207769746820666175636574A264697066 PUSH20 0x5822122031EB3EC726C32B3AD85B66555E6EE074 0xD8 PUSH9 0xCECC3E4889EEA77A22 PUSH28 0x2A4145364736F6C6343000606003300000000000000000000000000 ",
+  "pcMap": {
+    "0": {
+      "offset": [
+        86,
+        1405
+      ],
+      "op": "PUSH1",
+      "path": "4",
+      "value": "0x80"
+    },
+    "2": {
+      "fn": null,
+      "offset": [
+        86,
+        1405
+      ],
+      "op": "PUSH1",
+      "path": "4",
+      "value": "0x40"
+    },
+    "4": {
+      "fn": null,
+      "offset": [
+        86,
+        1405
+      ],
+      "op": "MSTORE",
+      "path": "4"
+    },
+    "5": {
+      "fn": null,
+      "offset": [
+        86,
+        1405
+      ],
+      "op": "CALLVALUE",
+      "path": "4"
+    },
+    "6": {
+      "op": "DUP1"
+    },
+    "7": {
+      "op": "ISZERO"
+    },
+    "8": {
+      "op": "PUSH2",
+      "value": "0x10"
+    },
+    "11": {
+      "op": "JUMPI"
+    },
+    "12": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "14": {
+      "op": "DUP1"
+    },
+    "15": {
+      "dev": "Cannot send ether to nonpayable function",
+      "fn": null,
+      "offset": [
+        86,
+        1405
+      ],
+      "op": "REVERT",
+      "path": "4"
+    },
+    "16": {
+      "op": "JUMPDEST"
+    },
+    "17": {
+      "offset": [
+        86,
+        1405
+      ],
+      "op": "POP",
+      "path": "4"
+    },
+    "18": {
+      "fn": null,
+      "offset": [
+        86,
+        1405
+      ],
+      "op": "PUSH1",
+      "path": "4",
+      "value": "0x4"
+    },
+    "20": {
+      "fn": null,
+      "offset": [
+        86,
+        1405
+      ],
+      "op": "CALLDATASIZE",
+      "path": "4"
+    },
+    "21": {
+      "fn": null,
+      "offset": [
+        86,
+        1405
+      ],
+      "op": "LT",
+      "path": "4"
+    },
+    "22": {
+      "fn": null,
+      "offset": [
+        86,
+        1405
+      ],
+      "op": "PUSH2",
+      "path": "4",
+      "value": "0x57"
+    },
+    "25": {
+      "fn": null,
+      "offset": [
+        86,
+        1405
+      ],
+      "op": "JUMPI",
+      "path": "4"
+    },
+    "26": {
+      "fn": null,
+      "offset": [
+        86,
+        1405
+      ],
+      "op": "PUSH1",
+      "path": "4",
+      "value": "0x0"
+    },
+    "28": {
+      "fn": null,
+      "offset": [
+        86,
+        1405
+      ],
+      "op": "CALLDATALOAD",
+      "path": "4"
+    },
+    "29": {
+      "fn": null,
+      "offset": [
+        86,
+        1405
+      ],
+      "op": "PUSH1",
+      "path": "4",
+      "value": "0xE0"
+    },
+    "31": {
+      "fn": null,
+      "offset": [
+        86,
+        1405
+      ],
+      "op": "SHR",
+      "path": "4"
+    },
+    "32": {
+      "fn": null,
+      "offset": [
+        86,
+        1405
+      ],
+      "op": "DUP1",
+      "path": "4"
+    },
+    "33": {
+      "fn": null,
+      "offset": [
+        86,
+        1405
+      ],
+      "op": "PUSH4",
+      "path": "4",
+      "value": "0x42619F66"
+    },
+    "38": {
+      "fn": null,
+      "offset": [
+        86,
+        1405
+      ],
+      "op": "EQ",
+      "path": "4"
+    },
+    "39": {
+      "fn": null,
+      "offset": [
+        86,
+        1405
+      ],
+      "op": "PUSH2",
+      "path": "4",
+      "value": "0x5C"
+    },
+    "42": {
+      "fn": null,
+      "offset": [
+        86,
+        1405
+      ],
+      "op": "JUMPI",
+      "path": "4"
+    },
+    "43": {
+      "fn": null,
+      "offset": [
+        86,
+        1405
+      ],
+      "op": "DUP1",
+      "path": "4"
+    },
+    "44": {
+      "fn": null,
+      "offset": [
+        86,
+        1405
+      ],
+      "op": "PUSH4",
+      "path": "4",
+      "value": "0x94985DDD"
+    },
+    "49": {
+      "fn": null,
+      "offset": [
+        86,
+        1405
+      ],
+      "op": "EQ",
+      "path": "4"
+    },
+    "50": {
+      "fn": null,
+      "offset": [
+        86,
+        1405
+      ],
+      "op": "PUSH2",
+      "path": "4",
+      "value": "0x76"
+    },
+    "53": {
+      "fn": null,
+      "offset": [
+        86,
+        1405
+      ],
+      "op": "JUMPI",
+      "path": "4"
+    },
+    "54": {
+      "fn": null,
+      "offset": [
+        86,
+        1405
+      ],
+      "op": "DUP1",
+      "path": "4"
+    },
+    "55": {
+      "fn": null,
+      "offset": [
+        86,
+        1405
+      ],
+      "op": "PUSH4",
+      "path": "4",
+      "value": "0x9E317F12"
+    },
+    "60": {
+      "fn": null,
+      "offset": [
+        86,
+        1405
+      ],
+      "op": "EQ",
+      "path": "4"
+    },
+    "61": {
+      "fn": null,
+      "offset": [
+        86,
+        1405
+      ],
+      "op": "PUSH2",
+      "path": "4",
+      "value": "0x9B"
+    },
+    "64": {
+      "fn": null,
+      "offset": [
+        86,
+        1405
+      ],
+      "op": "JUMPI",
+      "path": "4"
+    },
+    "65": {
+      "fn": null,
+      "offset": [
+        86,
+        1405
+      ],
+      "op": "DUP1",
+      "path": "4"
+    },
+    "66": {
+      "fn": null,
+      "offset": [
+        86,
+        1405
+      ],
+      "op": "PUSH4",
+      "path": "4",
+      "value": "0xB37217A4"
+    },
+    "71": {
+      "fn": null,
+      "offset": [
+        86,
+        1405
+      ],
+      "op": "EQ",
+      "path": "4"
+    },
+    "72": {
+      "fn": null,
+      "offset": [
+        86,
+        1405
+      ],
+      "op": "PUSH2",
+      "path": "4",
+      "value": "0xB8"
+    },
+    "75": {
+      "fn": null,
+      "offset": [
+        86,
+        1405
+      ],
+      "op": "JUMPI",
+      "path": "4"
+    },
+    "76": {
+      "fn": null,
+      "offset": [
+        86,
+        1405
+      ],
+      "op": "DUP1",
+      "path": "4"
+    },
+    "77": {
+      "fn": null,
+      "offset": [
+        86,
+        1405
+      ],
+      "op": "PUSH4",
+      "path": "4",
+      "value": "0xDC6CFE10"
+    },
+    "82": {
+      "fn": null,
+      "offset": [
+        86,
+        1405
+      ],
+      "op": "EQ",
+      "path": "4"
+    },
+    "83": {
+      "fn": null,
+      "offset": [
+        86,
+        1405
+      ],
+      "op": "PUSH2",
+      "path": "4",
+      "value": "0xD5"
+    },
+    "86": {
+      "fn": null,
+      "offset": [
+        86,
+        1405
+      ],
+      "op": "JUMPI",
+      "path": "4"
+    },
+    "87": {
+      "fn": null,
+      "offset": [
+        86,
+        1405
+      ],
+      "op": "JUMPDEST",
+      "path": "4"
+    },
+    "88": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "90": {
+      "op": "DUP1"
+    },
+    "91": {
+      "first_revert": true,
+      "op": "REVERT"
+    },
+    "92": {
+      "offset": [
+        198,
+        225
+      ],
+      "op": "JUMPDEST",
+      "path": "4"
+    },
+    "93": {
+      "fn": null,
+      "offset": [
+        198,
+        225
+      ],
+      "op": "PUSH2",
+      "path": "4",
+      "value": "0x64"
+    },
+    "96": {
+      "fn": null,
+      "offset": [
+        198,
+        225
+      ],
+      "op": "PUSH2",
+      "path": "4",
+      "value": "0xFE"
+    },
+    "99": {
+      "fn": null,
+      "jump": "i",
+      "offset": [
+        198,
+        225
+      ],
+      "op": "JUMP",
+      "path": "4"
+    },
+    "100": {
+      "fn": null,
+      "offset": [
+        198,
+        225
+      ],
+      "op": "JUMPDEST",
+      "path": "4"
+    },
+    "101": {
+      "fn": null,
+      "offset": [
+        198,
+        225
+      ],
+      "op": "PUSH1",
+      "path": "4",
+      "value": "0x40"
+    },
+    "103": {
+      "fn": null,
+      "offset": [
+        198,
+        225
+      ],
+      "op": "DUP1",
+      "path": "4"
+    },
+    "104": {
+      "fn": null,
+      "offset": [
+        198,
+        225
+      ],
+      "op": "MLOAD",
+      "path": "4"
+    },
+    "105": {
+      "fn": null,
+      "offset": [
+        198,
+        225
+      ],
+      "op": "SWAP2",
+      "path": "4"
+    },
+    "106": {
+      "fn": null,
+      "offset": [
+        198,
+        225
+      ],
+      "op": "DUP3",
+      "path": "4"
+    },
+    "107": {
+      "fn": null,
+      "offset": [
+        198,
+        225
+      ],
+      "op": "MSTORE",
+      "path": "4"
+    },
+    "108": {
+      "fn": null,
+      "offset": [
+        198,
+        225
+      ],
+      "op": "MLOAD",
+      "path": "4"
+    },
+    "109": {
+      "fn": null,
+      "offset": [
+        198,
+        225
+      ],
+      "op": "SWAP1",
+      "path": "4"
+    },
+    "110": {
+      "fn": null,
+      "offset": [
+        198,
+        225
+      ],
+      "op": "DUP2",
+      "path": "4"
+    },
+    "111": {
+      "fn": null,
+      "offset": [
+        198,
+        225
+      ],
+      "op": "SWAP1",
+      "path": "4"
+    },
+    "112": {
+      "fn": null,
+      "offset": [
+        198,
+        225
+      ],
+      "op": "SUB",
+      "path": "4"
+    },
+    "113": {
+      "fn": null,
+      "offset": [
+        198,
+        225
+      ],
+      "op": "PUSH1",
+      "path": "4",
+      "value": "0x20"
+    },
+    "115": {
+      "fn": null,
+      "offset": [
+        198,
+        225
+      ],
+      "op": "ADD",
+      "path": "4"
+    },
+    "116": {
+      "fn": null,
+      "offset": [
+        198,
+        225
+      ],
+      "op": "SWAP1",
+      "path": "4"
+    },
+    "117": {
+      "fn": null,
+      "offset": [
+        198,
+        225
+      ],
+      "op": "RETURN",
+      "path": "4"
+    },
+    "118": {
+      "fn": "VRFConsumerBase.rawFulfillRandomness",
+      "offset": [
+        7244,
+        7451
+      ],
+      "op": "JUMPDEST",
+      "path": "0"
+    },
+    "119": {
+      "fn": "VRFConsumerBase.rawFulfillRandomness",
+      "offset": [
+        7244,
+        7451
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x99"
+    },
+    "122": {
+      "fn": "VRFConsumerBase.rawFulfillRandomness",
+      "offset": [
+        7244,
+        7451
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x4"
+    },
+    "124": {
+      "fn": "VRFConsumerBase.rawFulfillRandomness",
+      "offset": [
+        7244,
+        7451
+      ],
+      "op": "DUP1",
+      "path": "0"
+    },
+    "125": {
+      "fn": "VRFConsumerBase.rawFulfillRandomness",
+      "offset": [
+        7244,
+        7451
+      ],
+      "op": "CALLDATASIZE",
+      "path": "0"
+    },
+    "126": {
+      "fn": "VRFConsumerBase.rawFulfillRandomness",
+      "offset": [
+        7244,
+        7451
+      ],
+      "op": "SUB",
+      "path": "0"
+    },
+    "127": {
+      "op": "PUSH1",
+      "value": "0x40"
+    },
+    "129": {
+      "op": "DUP2"
+    },
+    "130": {
+      "op": "LT"
+    },
+    "131": {
+      "op": "ISZERO"
+    },
+    "132": {
+      "op": "PUSH2",
+      "value": "0x8C"
+    },
+    "135": {
+      "op": "JUMPI"
+    },
+    "136": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "138": {
+      "op": "DUP1"
+    },
+    "139": {
+      "op": "REVERT"
+    },
+    "140": {
+      "op": "JUMPDEST"
+    },
+    "141": {
+      "op": "POP"
+    },
+    "142": {
+      "fn": "VRFConsumerBase.rawFulfillRandomness",
+      "offset": [
+        7244,
+        7451
+      ],
+      "op": "DUP1",
+      "path": "0"
+    },
+    "143": {
+      "fn": "VRFConsumerBase.rawFulfillRandomness",
+      "offset": [
+        7244,
+        7451
+      ],
+      "op": "CALLDATALOAD",
+      "path": "0"
+    },
+    "144": {
+      "fn": "VRFConsumerBase.rawFulfillRandomness",
+      "offset": [
+        7244,
+        7451
+      ],
+      "op": "SWAP1",
+      "path": "0"
+    },
+    "145": {
+      "fn": "VRFConsumerBase.rawFulfillRandomness",
+      "offset": [
+        7244,
+        7451
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x20"
+    },
+    "147": {
+      "fn": "VRFConsumerBase.rawFulfillRandomness",
+      "offset": [
+        7244,
+        7451
+      ],
+      "op": "ADD",
+      "path": "0"
+    },
+    "148": {
+      "fn": "VRFConsumerBase.rawFulfillRandomness",
+      "offset": [
+        7244,
+        7451
+      ],
+      "op": "CALLDATALOAD",
+      "path": "0"
+    },
+    "149": {
+      "fn": "VRFConsumerBase.rawFulfillRandomness",
+      "offset": [
+        7244,
+        7451
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x104"
+    },
+    "152": {
+      "fn": "VRFConsumerBase.rawFulfillRandomness",
+      "jump": "i",
+      "offset": [
+        7244,
+        7451
+      ],
+      "op": "JUMP",
+      "path": "0"
+    },
+    "153": {
+      "fn": "VRFConsumerBase.rawFulfillRandomness",
+      "offset": [
+        7244,
+        7451
+      ],
+      "op": "JUMPDEST",
+      "path": "0"
+    },
+    "154": {
+      "fn": "VRFConsumerBase.rawFulfillRandomness",
+      "offset": [
+        7244,
+        7451
+      ],
+      "op": "STOP",
+      "path": "0"
+    },
+    "155": {
+      "offset": [
+        6838,
+        6905
+      ],
+      "op": "JUMPDEST",
+      "path": "0"
+    },
+    "156": {
+      "fn": "VRFConsumerBase.rawFulfillRandomness",
+      "offset": [
+        6838,
+        6905
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x64"
+    },
+    "159": {
+      "fn": "VRFConsumerBase.rawFulfillRandomness",
+      "offset": [
+        6838,
+        6905
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x4"
+    },
+    "161": {
+      "fn": "VRFConsumerBase.rawFulfillRandomness",
+      "offset": [
+        6838,
+        6905
+      ],
+      "op": "DUP1",
+      "path": "0"
+    },
+    "162": {
+      "fn": "VRFConsumerBase.rawFulfillRandomness",
+      "offset": [
+        6838,
+        6905
+      ],
+      "op": "CALLDATASIZE",
+      "path": "0"
+    },
+    "163": {
+      "fn": "VRFConsumerBase.rawFulfillRandomness",
+      "offset": [
+        6838,
+        6905
+      ],
+      "op": "SUB",
+      "path": "0"
+    },
+    "164": {
+      "op": "PUSH1",
+      "value": "0x20"
+    },
+    "166": {
+      "op": "DUP2"
+    },
+    "167": {
+      "op": "LT"
+    },
+    "168": {
+      "op": "ISZERO"
+    },
+    "169": {
+      "op": "PUSH2",
+      "value": "0xB1"
+    },
+    "172": {
+      "op": "JUMPI"
+    },
+    "173": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "175": {
+      "op": "DUP1"
+    },
+    "176": {
+      "op": "REVERT"
+    },
+    "177": {
+      "op": "JUMPDEST"
+    },
+    "178": {
+      "op": "POP"
+    },
+    "179": {
+      "offset": [
+        6838,
+        6905
+      ],
+      "op": "CALLDATALOAD",
+      "path": "0"
+    },
+    "180": {
+      "fn": "VRFConsumerBase.rawFulfillRandomness",
+      "offset": [
+        6838,
+        6905
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x18F"
+    },
+    "183": {
+      "fn": "VRFConsumerBase.rawFulfillRandomness",
+      "jump": "i",
+      "offset": [
+        6838,
+        6905
+      ],
+      "op": "JUMP",
+      "path": "0"
+    },
+    "184": {
+      "fn": "VRFConsumer.getRandomNumber",
+      "offset": [
+        945,
+        1206
+      ],
+      "op": "JUMPDEST",
+      "path": "4"
+    },
+    "185": {
+      "fn": "VRFConsumer.getRandomNumber",
+      "offset": [
+        945,
+        1206
+      ],
+      "op": "PUSH2",
+      "path": "4",
+      "value": "0x64"
+    },
+    "188": {
+      "fn": "VRFConsumer.getRandomNumber",
+      "offset": [
+        945,
+        1206
+      ],
+      "op": "PUSH1",
+      "path": "4",
+      "value": "0x4"
+    },
+    "190": {
+      "fn": "VRFConsumer.getRandomNumber",
+      "offset": [
+        945,
+        1206
+      ],
+      "op": "DUP1",
+      "path": "4"
+    },
+    "191": {
+      "fn": "VRFConsumer.getRandomNumber",
+      "offset": [
+        945,
+        1206
+      ],
+      "op": "CALLDATASIZE",
+      "path": "4"
+    },
+    "192": {
+      "fn": "VRFConsumer.getRandomNumber",
+      "offset": [
+        945,
+        1206
+      ],
+      "op": "SUB",
+      "path": "4"
+    },
+    "193": {
+      "op": "PUSH1",
+      "value": "0x20"
+    },
+    "195": {
+      "op": "DUP2"
+    },
+    "196": {
+      "op": "LT"
+    },
+    "197": {
+      "op": "ISZERO"
+    },
+    "198": {
+      "op": "PUSH2",
+      "value": "0xCE"
+    },
+    "201": {
+      "op": "JUMPI"
+    },
+    "202": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "204": {
+      "op": "DUP1"
+    },
+    "205": {
+      "op": "REVERT"
+    },
+    "206": {
+      "op": "JUMPDEST"
+    },
+    "207": {
+      "op": "POP"
+    },
+    "208": {
+      "fn": "VRFConsumer.getRandomNumber",
+      "offset": [
+        945,
+        1206
+      ],
+      "op": "CALLDATALOAD",
+      "path": "4"
+    },
+    "209": {
+      "fn": "VRFConsumer.getRandomNumber",
+      "offset": [
+        945,
+        1206
+      ],
+      "op": "PUSH2",
+      "path": "4",
+      "value": "0x1A1"
+    },
+    "212": {
+      "fn": "VRFConsumer.getRandomNumber",
+      "jump": "i",
+      "offset": [
+        945,
+        1206
+      ],
+      "op": "JUMP",
+      "path": "4"
+    },
+    "213": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5658,
+        6608
+      ],
+      "op": "JUMPDEST",
+      "path": "0"
+    },
+    "214": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5658,
+        6608
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x64"
+    },
+    "217": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5658,
+        6608
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x4"
+    },
+    "219": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5658,
+        6608
+      ],
+      "op": "DUP1",
+      "path": "0"
+    },
+    "220": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5658,
+        6608
+      ],
+      "op": "CALLDATASIZE",
+      "path": "0"
+    },
+    "221": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5658,
+        6608
+      ],
+      "op": "SUB",
+      "path": "0"
+    },
+    "222": {
+      "op": "PUSH1",
+      "value": "0x60"
+    },
+    "224": {
+      "op": "DUP2"
+    },
+    "225": {
+      "op": "LT"
+    },
+    "226": {
+      "op": "ISZERO"
+    },
+    "227": {
+      "op": "PUSH2",
+      "value": "0xEB"
+    },
+    "230": {
+      "op": "JUMPI"
+    },
+    "231": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "233": {
+      "op": "DUP1"
+    },
+    "234": {
+      "op": "REVERT"
+    },
+    "235": {
+      "op": "JUMPDEST"
+    },
+    "236": {
+      "op": "POP"
+    },
+    "237": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5658,
+        6608
+      ],
+      "op": "DUP1",
+      "path": "0"
+    },
+    "238": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5658,
+        6608
+      ],
+      "op": "CALLDATALOAD",
+      "path": "0"
+    },
+    "239": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5658,
+        6608
+      ],
+      "op": "SWAP1",
+      "path": "0"
+    },
+    "240": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5658,
+        6608
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x20"
+    },
+    "242": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5658,
+        6608
+      ],
+      "op": "DUP2",
+      "path": "0"
+    },
+    "243": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5658,
+        6608
+      ],
+      "op": "ADD",
+      "path": "0"
+    },
+    "244": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5658,
+        6608
+      ],
+      "op": "CALLDATALOAD",
+      "path": "0"
+    },
+    "245": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5658,
+        6608
+      ],
+      "op": "SWAP1",
+      "path": "0"
+    },
+    "246": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5658,
+        6608
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x40"
+    },
+    "248": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5658,
+        6608
+      ],
+      "op": "ADD",
+      "path": "0"
+    },
+    "249": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5658,
+        6608
+      ],
+      "op": "CALLDATALOAD",
+      "path": "0"
+    },
+    "250": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5658,
+        6608
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x29A"
+    },
+    "253": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "jump": "i",
+      "offset": [
+        5658,
+        6608
+      ],
+      "op": "JUMP",
+      "path": "0"
+    },
+    "254": {
+      "offset": [
+        198,
+        225
+      ],
+      "op": "JUMPDEST",
+      "path": "4"
+    },
+    "255": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        198,
+        225
+      ],
+      "op": "PUSH1",
+      "path": "4",
+      "value": "0x3"
+    },
+    "257": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        198,
+        225
+      ],
+      "op": "SLOAD",
+      "path": "4"
+    },
+    "258": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        198,
+        225
+      ],
+      "op": "DUP2",
+      "path": "4"
+    },
+    "259": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "jump": "o",
+      "offset": [
+        198,
+        225
+      ],
+      "op": "JUMP",
+      "path": "4"
+    },
+    "260": {
+      "fn": "VRFConsumerBase.rawFulfillRandomness",
+      "offset": [
+        7244,
+        7451
+      ],
+      "op": "JUMPDEST",
+      "path": "0"
+    },
+    "261": {
+      "fn": "VRFConsumerBase.rawFulfillRandomness",
+      "offset": [
+        7336,
+        7346
+      ],
+      "op": "CALLER",
+      "path": "0",
+      "statement": 0
+    },
+    "262": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "264": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "266": {
+      "op": "PUSH1",
+      "value": "0xA0"
+    },
+    "268": {
+      "op": "SHL"
+    },
+    "269": {
+      "op": "SUB"
+    },
+    "270": {
+      "fn": "VRFConsumerBase.rawFulfillRandomness",
+      "offset": [
+        7350,
+        7364
+      ],
+      "op": "PUSH32",
+      "path": "0",
+      "value": "0x0"
+    },
+    "303": {
+      "fn": "VRFConsumerBase.rawFulfillRandomness",
+      "offset": [
+        7336,
+        7364
+      ],
+      "op": "AND",
+      "path": "0"
+    },
+    "304": {
+      "branch": 14,
+      "fn": "VRFConsumerBase.rawFulfillRandomness",
+      "offset": [
+        7336,
+        7364
+      ],
+      "op": "EQ",
+      "path": "0"
+    },
+    "305": {
+      "fn": "VRFConsumerBase.rawFulfillRandomness",
+      "offset": [
+        7328,
+        7400
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x181"
+    },
+    "308": {
+      "branch": 14,
+      "fn": "VRFConsumerBase.rawFulfillRandomness",
+      "offset": [
+        7328,
+        7400
+      ],
+      "op": "JUMPI",
+      "path": "0"
+    },
+    "309": {
+      "fn": "VRFConsumerBase.rawFulfillRandomness",
+      "offset": [
+        7328,
+        7400
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x40"
+    },
+    "311": {
+      "fn": "VRFConsumerBase.rawFulfillRandomness",
+      "offset": [
+        7328,
+        7400
+      ],
+      "op": "DUP1",
+      "path": "0"
+    },
+    "312": {
+      "fn": "VRFConsumerBase.rawFulfillRandomness",
+      "offset": [
+        7328,
+        7400
+      ],
+      "op": "MLOAD",
+      "path": "0"
+    },
+    "313": {
+      "op": "PUSH3",
+      "value": "0x461BCD"
+    },
+    "317": {
+      "op": "PUSH1",
+      "value": "0xE5"
+    },
+    "319": {
+      "op": "SHL"
+    },
+    "320": {
+      "fn": "VRFConsumerBase.rawFulfillRandomness",
+      "offset": [
+        7328,
+        7400
+      ],
+      "op": "DUP2",
+      "path": "0"
+    },
+    "321": {
+      "fn": "VRFConsumerBase.rawFulfillRandomness",
+      "offset": [
+        7328,
+        7400
+      ],
+      "op": "MSTORE",
+      "path": "0"
+    },
+    "322": {
+      "fn": "VRFConsumerBase.rawFulfillRandomness",
+      "offset": [
+        7328,
+        7400
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x20"
+    },
+    "324": {
+      "fn": "VRFConsumerBase.rawFulfillRandomness",
+      "offset": [
+        7328,
+        7400
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x4"
+    },
+    "326": {
+      "fn": "VRFConsumerBase.rawFulfillRandomness",
+      "offset": [
+        7328,
+        7400
+      ],
+      "op": "DUP3",
+      "path": "0"
+    },
+    "327": {
+      "fn": "VRFConsumerBase.rawFulfillRandomness",
+      "offset": [
+        7328,
+        7400
+      ],
+      "op": "ADD",
+      "path": "0"
+    },
+    "328": {
+      "fn": "VRFConsumerBase.rawFulfillRandomness",
+      "offset": [
+        7328,
+        7400
+      ],
+      "op": "MSTORE",
+      "path": "0"
+    },
+    "329": {
+      "fn": "VRFConsumerBase.rawFulfillRandomness",
+      "offset": [
+        7328,
+        7400
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x1F"
+    },
+    "331": {
+      "fn": "VRFConsumerBase.rawFulfillRandomness",
+      "offset": [
+        7328,
+        7400
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x24"
+    },
+    "333": {
+      "fn": "VRFConsumerBase.rawFulfillRandomness",
+      "offset": [
+        7328,
+        7400
+      ],
+      "op": "DUP3",
+      "path": "0"
+    },
+    "334": {
+      "fn": "VRFConsumerBase.rawFulfillRandomness",
+      "offset": [
+        7328,
+        7400
+      ],
+      "op": "ADD",
+      "path": "0"
+    },
+    "335": {
+      "fn": "VRFConsumerBase.rawFulfillRandomness",
+      "offset": [
+        7328,
+        7400
+      ],
+      "op": "MSTORE",
+      "path": "0"
+    },
+    "336": {
+      "fn": "VRFConsumerBase.rawFulfillRandomness",
+      "offset": [
+        7328,
+        7400
+      ],
+      "op": "PUSH32",
+      "path": "0",
+      "value": "0x4F6E6C7920565246436F6F7264696E61746F722063616E2066756C66696C6C00"
+    },
+    "369": {
+      "fn": "VRFConsumerBase.rawFulfillRandomness",
+      "offset": [
+        7328,
+        7400
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x44"
+    },
+    "371": {
+      "fn": "VRFConsumerBase.rawFulfillRandomness",
+      "offset": [
+        7328,
+        7400
+      ],
+      "op": "DUP3",
+      "path": "0"
+    },
+    "372": {
+      "fn": "VRFConsumerBase.rawFulfillRandomness",
+      "offset": [
+        7328,
+        7400
+      ],
+      "op": "ADD",
+      "path": "0"
+    },
+    "373": {
+      "fn": "VRFConsumerBase.rawFulfillRandomness",
+      "offset": [
+        7328,
+        7400
+      ],
+      "op": "MSTORE",
+      "path": "0"
+    },
+    "374": {
+      "fn": "VRFConsumerBase.rawFulfillRandomness",
+      "offset": [
+        7328,
+        7400
+      ],
+      "op": "SWAP1",
+      "path": "0"
+    },
+    "375": {
+      "fn": "VRFConsumerBase.rawFulfillRandomness",
+      "offset": [
+        7328,
+        7400
+      ],
+      "op": "MLOAD",
+      "path": "0"
+    },
+    "376": {
+      "fn": "VRFConsumerBase.rawFulfillRandomness",
+      "offset": [
+        7328,
+        7400
+      ],
+      "op": "SWAP1",
+      "path": "0"
+    },
+    "377": {
+      "fn": "VRFConsumerBase.rawFulfillRandomness",
+      "offset": [
+        7328,
+        7400
+      ],
+      "op": "DUP2",
+      "path": "0"
+    },
+    "378": {
+      "fn": "VRFConsumerBase.rawFulfillRandomness",
+      "offset": [
+        7328,
+        7400
+      ],
+      "op": "SWAP1",
+      "path": "0"
+    },
+    "379": {
+      "fn": "VRFConsumerBase.rawFulfillRandomness",
+      "offset": [
+        7328,
+        7400
+      ],
+      "op": "SUB",
+      "path": "0"
+    },
+    "380": {
+      "fn": "VRFConsumerBase.rawFulfillRandomness",
+      "offset": [
+        7328,
+        7400
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x64"
+    },
+    "382": {
+      "fn": "VRFConsumerBase.rawFulfillRandomness",
+      "offset": [
+        7328,
+        7400
+      ],
+      "op": "ADD",
+      "path": "0"
+    },
+    "383": {
+      "fn": "VRFConsumerBase.rawFulfillRandomness",
+      "offset": [
+        7328,
+        7400
+      ],
+      "op": "SWAP1",
+      "path": "0"
+    },
+    "384": {
+      "fn": "VRFConsumerBase.rawFulfillRandomness",
+      "offset": [
+        7328,
+        7400
+      ],
+      "op": "REVERT",
+      "path": "0"
+    },
+    "385": {
+      "fn": "VRFConsumerBase.rawFulfillRandomness",
+      "offset": [
+        7328,
+        7400
+      ],
+      "op": "JUMPDEST",
+      "path": "0"
+    },
+    "386": {
+      "fn": "VRFConsumerBase.rawFulfillRandomness",
+      "offset": [
+        7406,
+        7446
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "statement": 1,
+      "value": "0x18B"
+    },
+    "389": {
+      "fn": "VRFConsumerBase.rawFulfillRandomness",
+      "offset": [
+        7424,
+        7433
+      ],
+      "op": "DUP3",
+      "path": "0"
+    },
+    "390": {
+      "fn": "VRFConsumerBase.rawFulfillRandomness",
+      "offset": [
+        7435,
+        7445
+      ],
+      "op": "DUP3",
+      "path": "0"
+    },
+    "391": {
+      "fn": "VRFConsumerBase.rawFulfillRandomness",
+      "offset": [
+        7406,
+        7423
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x45C"
+    },
+    "394": {
+      "fn": "VRFConsumerBase.rawFulfillRandomness",
+      "jump": "i",
+      "offset": [
+        7406,
+        7446
+      ],
+      "op": "JUMP",
+      "path": "0"
+    },
+    "395": {
+      "fn": "VRFConsumerBase.rawFulfillRandomness",
+      "offset": [
+        7406,
+        7446
+      ],
+      "op": "JUMPDEST",
+      "path": "0"
+    },
+    "396": {
+      "fn": "VRFConsumerBase.rawFulfillRandomness",
+      "offset": [
+        7244,
+        7451
+      ],
+      "op": "POP",
+      "path": "0"
+    },
+    "397": {
+      "fn": "VRFConsumerBase.rawFulfillRandomness",
+      "offset": [
+        7244,
+        7451
+      ],
+      "op": "POP",
+      "path": "0"
+    },
+    "398": {
+      "fn": "VRFConsumerBase.rawFulfillRandomness",
+      "jump": "o",
+      "offset": [
+        7244,
+        7451
+      ],
+      "op": "JUMP",
+      "path": "0"
+    },
+    "399": {
+      "offset": [
+        6838,
+        6905
+      ],
+      "op": "JUMPDEST",
+      "path": "0"
+    },
+    "400": {
+      "fn": "VRFConsumerBase.rawFulfillRandomness",
+      "offset": [
+        6838,
+        6905
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x0"
+    },
+    "402": {
+      "fn": "VRFConsumerBase.rawFulfillRandomness",
+      "offset": [
+        6838,
+        6905
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x20"
+    },
+    "404": {
+      "fn": "VRFConsumerBase.rawFulfillRandomness",
+      "offset": [
+        6838,
+        6905
+      ],
+      "op": "DUP2",
+      "path": "0"
+    },
+    "405": {
+      "fn": "VRFConsumerBase.rawFulfillRandomness",
+      "offset": [
+        6838,
+        6905
+      ],
+      "op": "SWAP1",
+      "path": "0"
+    },
+    "406": {
+      "fn": "VRFConsumerBase.rawFulfillRandomness",
+      "offset": [
+        6838,
+        6905
+      ],
+      "op": "MSTORE",
+      "path": "0"
+    },
+    "407": {
+      "fn": "VRFConsumerBase.rawFulfillRandomness",
+      "offset": [
+        6838,
+        6905
+      ],
+      "op": "SWAP1",
+      "path": "0"
+    },
+    "408": {
+      "fn": "VRFConsumerBase.rawFulfillRandomness",
+      "offset": [
+        6838,
+        6905
+      ],
+      "op": "DUP2",
+      "path": "0"
+    },
+    "409": {
+      "fn": "VRFConsumerBase.rawFulfillRandomness",
+      "offset": [
+        6838,
+        6905
+      ],
+      "op": "MSTORE",
+      "path": "0"
+    },
+    "410": {
+      "fn": "VRFConsumerBase.rawFulfillRandomness",
+      "offset": [
+        6838,
+        6905
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x40"
+    },
+    "412": {
+      "fn": "VRFConsumerBase.rawFulfillRandomness",
+      "offset": [
+        6838,
+        6905
+      ],
+      "op": "SWAP1",
+      "path": "0"
+    },
+    "413": {
+      "fn": "VRFConsumerBase.rawFulfillRandomness",
+      "offset": [
+        6838,
+        6905
+      ],
+      "op": "KECCAK256",
+      "path": "0"
+    },
+    "414": {
+      "fn": "VRFConsumerBase.rawFulfillRandomness",
+      "offset": [
+        6838,
+        6905
+      ],
+      "op": "SLOAD",
+      "path": "0"
+    },
+    "415": {
+      "fn": "VRFConsumerBase.rawFulfillRandomness",
+      "offset": [
+        6838,
+        6905
+      ],
+      "op": "DUP2",
+      "path": "0"
+    },
+    "416": {
+      "fn": "VRFConsumerBase.rawFulfillRandomness",
+      "jump": "o",
+      "offset": [
+        6838,
+        6905
+      ],
+      "op": "JUMP",
+      "path": "0"
+    },
+    "417": {
+      "fn": "VRFConsumer.getRandomNumber",
+      "offset": [
+        945,
+        1206
+      ],
+      "op": "JUMPDEST",
+      "path": "4"
+    },
+    "418": {
+      "fn": "VRFConsumer.getRandomNumber",
+      "offset": [
+        1012,
+        1029
+      ],
+      "op": "PUSH1",
+      "path": "4",
+      "value": "0x0"
+    },
+    "420": {
+      "fn": "VRFConsumer.getRandomNumber",
+      "offset": [
+        1082,
+        1085
+      ],
+      "op": "PUSH1",
+      "path": "4",
+      "statement": 2,
+      "value": "0x2"
+    },
+    "422": {
+      "fn": "VRFConsumer.getRandomNumber",
+      "offset": [
+        1082,
+        1085
+      ],
+      "op": "SLOAD",
+      "path": "4"
+    },
+    "423": {
+      "fn": "VRFConsumer.getRandomNumber",
+      "offset": [
+        1049,
+        1053
+      ],
+      "op": "PUSH32",
+      "path": "4",
+      "value": "0x0"
+    },
+    "456": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "458": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "460": {
+      "op": "PUSH1",
+      "value": "0xA0"
+    },
+    "462": {
+      "op": "SHL"
+    },
+    "463": {
+      "op": "SUB"
+    },
+    "464": {
+      "fn": "VRFConsumer.getRandomNumber",
+      "offset": [
+        1049,
+        1063
+      ],
+      "op": "AND",
+      "path": "4"
+    },
+    "465": {
+      "fn": "VRFConsumer.getRandomNumber",
+      "offset": [
+        1049,
+        1063
+      ],
+      "op": "PUSH4",
+      "path": "4",
+      "value": "0x70A08231"
+    },
+    "470": {
+      "fn": "VRFConsumer.getRandomNumber",
+      "offset": [
+        1072,
+        1076
+      ],
+      "op": "ADDRESS",
+      "path": "4"
+    },
+    "471": {
+      "fn": "VRFConsumer.getRandomNumber",
+      "offset": [
+        1049,
+        1078
+      ],
+      "op": "PUSH1",
+      "path": "4",
+      "value": "0x40"
+    },
+    "473": {
+      "fn": "VRFConsumer.getRandomNumber",
+      "offset": [
+        1049,
+        1078
+      ],
+      "op": "MLOAD",
+      "path": "4"
+    },
+    "474": {
+      "fn": "VRFConsumer.getRandomNumber",
+      "offset": [
+        1049,
+        1078
+      ],
+      "op": "DUP3",
+      "path": "4"
+    },
+    "475": {
+      "fn": "VRFConsumer.getRandomNumber",
+      "offset": [
+        1049,
+        1078
+      ],
+      "op": "PUSH4",
+      "path": "4",
+      "value": "0xFFFFFFFF"
+    },
+    "480": {
+      "fn": "VRFConsumer.getRandomNumber",
+      "offset": [
+        1049,
+        1078
+      ],
+      "op": "AND",
+      "path": "4"
+    },
+    "481": {
+      "fn": "VRFConsumer.getRandomNumber",
+      "offset": [
+        1049,
+        1078
+      ],
+      "op": "PUSH1",
+      "path": "4",
+      "value": "0xE0"
+    },
+    "483": {
+      "fn": "VRFConsumer.getRandomNumber",
+      "offset": [
+        1049,
+        1078
+      ],
+      "op": "SHL",
+      "path": "4"
+    },
+    "484": {
+      "fn": "VRFConsumer.getRandomNumber",
+      "offset": [
+        1049,
+        1078
+      ],
+      "op": "DUP2",
+      "path": "4"
+    },
+    "485": {
+      "fn": "VRFConsumer.getRandomNumber",
+      "offset": [
+        1049,
+        1078
+      ],
+      "op": "MSTORE",
+      "path": "4"
+    },
+    "486": {
+      "fn": "VRFConsumer.getRandomNumber",
+      "offset": [
+        1049,
+        1078
+      ],
+      "op": "PUSH1",
+      "path": "4",
+      "value": "0x4"
+    },
+    "488": {
+      "fn": "VRFConsumer.getRandomNumber",
+      "offset": [
+        1049,
+        1078
+      ],
+      "op": "ADD",
+      "path": "4"
+    },
+    "489": {
+      "fn": "VRFConsumer.getRandomNumber",
+      "offset": [
+        1049,
+        1078
+      ],
+      "op": "DUP1",
+      "path": "4"
+    },
+    "490": {
+      "fn": "VRFConsumer.getRandomNumber",
+      "offset": [
+        1049,
+        1078
+      ],
+      "op": "DUP3",
+      "path": "4"
+    },
+    "491": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "493": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "495": {
+      "op": "PUSH1",
+      "value": "0xA0"
+    },
+    "497": {
+      "op": "SHL"
+    },
+    "498": {
+      "op": "SUB"
+    },
+    "499": {
+      "fn": "VRFConsumer.getRandomNumber",
+      "offset": [
+        1049,
+        1078
+      ],
+      "op": "AND",
+      "path": "4"
+    },
+    "500": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "502": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "504": {
+      "op": "PUSH1",
+      "value": "0xA0"
+    },
+    "506": {
+      "op": "SHL"
+    },
+    "507": {
+      "op": "SUB"
+    },
+    "508": {
+      "fn": "VRFConsumer.getRandomNumber",
+      "offset": [
+        1049,
+        1078
+      ],
+      "op": "AND",
+      "path": "4"
+    },
+    "509": {
+      "fn": "VRFConsumer.getRandomNumber",
+      "offset": [
+        1049,
+        1078
+      ],
+      "op": "DUP2",
+      "path": "4"
+    },
+    "510": {
+      "fn": "VRFConsumer.getRandomNumber",
+      "offset": [
+        1049,
+        1078
+      ],
+      "op": "MSTORE",
+      "path": "4"
+    },
+    "511": {
+      "fn": "VRFConsumer.getRandomNumber",
+      "offset": [
+        1049,
+        1078
+      ],
+      "op": "PUSH1",
+      "path": "4",
+      "value": "0x20"
+    },
+    "513": {
+      "fn": "VRFConsumer.getRandomNumber",
+      "offset": [
+        1049,
+        1078
+      ],
+      "op": "ADD",
+      "path": "4"
+    },
+    "514": {
+      "fn": "VRFConsumer.getRandomNumber",
+      "offset": [
+        1049,
+        1078
+      ],
+      "op": "SWAP2",
+      "path": "4"
+    },
+    "515": {
+      "fn": "VRFConsumer.getRandomNumber",
+      "offset": [
+        1049,
+        1078
+      ],
+      "op": "POP",
+      "path": "4"
+    },
+    "516": {
+      "fn": "VRFConsumer.getRandomNumber",
+      "offset": [
+        1049,
+        1078
+      ],
+      "op": "POP",
+      "path": "4"
+    },
+    "517": {
+      "fn": "VRFConsumer.getRandomNumber",
+      "offset": [
+        1049,
+        1078
+      ],
+      "op": "PUSH1",
+      "path": "4",
+      "value": "0x20"
+    },
+    "519": {
+      "fn": "VRFConsumer.getRandomNumber",
+      "offset": [
+        1049,
+        1078
+      ],
+      "op": "PUSH1",
+      "path": "4",
+      "value": "0x40"
+    },
+    "521": {
+      "fn": "VRFConsumer.getRandomNumber",
+      "offset": [
+        1049,
+        1078
+      ],
+      "op": "MLOAD",
+      "path": "4"
+    },
+    "522": {
+      "fn": "VRFConsumer.getRandomNumber",
+      "offset": [
+        1049,
+        1078
+      ],
+      "op": "DUP1",
+      "path": "4"
+    },
+    "523": {
+      "fn": "VRFConsumer.getRandomNumber",
+      "offset": [
+        1049,
+        1078
+      ],
+      "op": "DUP4",
+      "path": "4"
+    },
+    "524": {
+      "fn": "VRFConsumer.getRandomNumber",
+      "offset": [
+        1049,
+        1078
+      ],
+      "op": "SUB",
+      "path": "4"
+    },
+    "525": {
+      "fn": "VRFConsumer.getRandomNumber",
+      "offset": [
+        1049,
+        1078
+      ],
+      "op": "DUP2",
+      "path": "4"
+    },
+    "526": {
+      "fn": "VRFConsumer.getRandomNumber",
+      "offset": [
+        1049,
+        1078
+      ],
+      "op": "DUP7",
+      "path": "4"
+    },
+    "527": {
+      "fn": "VRFConsumer.getRandomNumber",
+      "offset": [
+        1049,
+        1078
+      ],
+      "op": "DUP1",
+      "path": "4"
+    },
+    "528": {
+      "fn": "VRFConsumer.getRandomNumber",
+      "offset": [
+        1049,
+        1078
+      ],
+      "op": "EXTCODESIZE",
+      "path": "4"
+    },
+    "529": {
+      "fn": "VRFConsumer.getRandomNumber",
+      "offset": [
+        1049,
+        1078
+      ],
+      "op": "ISZERO",
+      "path": "4"
+    },
+    "530": {
+      "op": "DUP1"
+    },
+    "531": {
+      "op": "ISZERO"
+    },
+    "532": {
+      "op": "PUSH2",
+      "value": "0x21C"
+    },
+    "535": {
+      "op": "JUMPI"
+    },
+    "536": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "538": {
+      "op": "DUP1"
+    },
+    "539": {
+      "op": "REVERT"
+    },
+    "540": {
+      "op": "JUMPDEST"
+    },
+    "541": {
+      "fn": "VRFConsumer.getRandomNumber",
+      "offset": [
+        1049,
+        1078
+      ],
+      "op": "POP",
+      "path": "4"
+    },
+    "542": {
+      "fn": "VRFConsumer.getRandomNumber",
+      "offset": [
+        1049,
+        1078
+      ],
+      "op": "GAS",
+      "path": "4"
+    },
+    "543": {
+      "fn": "VRFConsumer.getRandomNumber",
+      "offset": [
+        1049,
+        1078
+      ],
+      "op": "STATICCALL",
+      "path": "4"
+    },
+    "544": {
+      "fn": "VRFConsumer.getRandomNumber",
+      "offset": [
+        1049,
+        1078
+      ],
+      "op": "ISZERO",
+      "path": "4"
+    },
+    "545": {
+      "op": "DUP1"
+    },
+    "546": {
+      "op": "ISZERO"
+    },
+    "547": {
+      "op": "PUSH2",
+      "value": "0x230"
+    },
+    "550": {
+      "op": "JUMPI"
+    },
+    "551": {
+      "op": "RETURNDATASIZE"
+    },
+    "552": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "554": {
+      "op": "DUP1"
+    },
+    "555": {
+      "op": "RETURNDATACOPY"
+    },
+    "556": {
+      "op": "RETURNDATASIZE"
+    },
+    "557": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "559": {
+      "op": "REVERT"
+    },
+    "560": {
+      "op": "JUMPDEST"
+    },
+    "561": {
+      "fn": "VRFConsumer.getRandomNumber",
+      "offset": [
+        1049,
+        1078
+      ],
+      "op": "POP",
+      "path": "4"
+    },
+    "562": {
+      "fn": "VRFConsumer.getRandomNumber",
+      "offset": [
+        1049,
+        1078
+      ],
+      "op": "POP",
+      "path": "4"
+    },
+    "563": {
+      "fn": "VRFConsumer.getRandomNumber",
+      "offset": [
+        1049,
+        1078
+      ],
+      "op": "POP",
+      "path": "4"
+    },
+    "564": {
+      "fn": "VRFConsumer.getRandomNumber",
+      "offset": [
+        1049,
+        1078
+      ],
+      "op": "POP",
+      "path": "4"
+    },
+    "565": {
+      "fn": "VRFConsumer.getRandomNumber",
+      "offset": [
+        1049,
+        1078
+      ],
+      "op": "PUSH1",
+      "path": "4",
+      "value": "0x40"
+    },
+    "567": {
+      "fn": "VRFConsumer.getRandomNumber",
+      "offset": [
+        1049,
+        1078
+      ],
+      "op": "MLOAD",
+      "path": "4"
+    },
+    "568": {
+      "fn": "VRFConsumer.getRandomNumber",
+      "offset": [
+        1049,
+        1078
+      ],
+      "op": "RETURNDATASIZE",
+      "path": "4"
+    },
+    "569": {
+      "op": "PUSH1",
+      "value": "0x20"
+    },
+    "571": {
+      "op": "DUP2"
+    },
+    "572": {
+      "op": "LT"
+    },
+    "573": {
+      "op": "ISZERO"
+    },
+    "574": {
+      "op": "PUSH2",
+      "value": "0x246"
+    },
+    "577": {
+      "op": "JUMPI"
+    },
+    "578": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "580": {
+      "op": "DUP1"
+    },
+    "581": {
+      "op": "REVERT"
+    },
+    "582": {
+      "op": "JUMPDEST"
+    },
+    "583": {
+      "op": "POP"
+    },
+    "584": {
+      "fn": "VRFConsumer.getRandomNumber",
+      "offset": [
+        1049,
+        1078
+      ],
+      "op": "MLOAD",
+      "path": "4"
+    },
+    "585": {
+      "fn": "VRFConsumer.getRandomNumber",
+      "offset": [
+        1049,
+        1085
+      ],
+      "op": "LT",
+      "path": "4"
+    },
+    "586": {
+      "branch": 12,
+      "fn": "VRFConsumer.getRandomNumber",
+      "offset": [
+        1049,
+        1085
+      ],
+      "op": "ISZERO",
+      "path": "4"
+    },
+    "587": {
+      "fn": "VRFConsumer.getRandomNumber",
+      "offset": [
+        1041,
+        1133
+      ],
+      "op": "PUSH2",
+      "path": "4",
+      "value": "0x285"
+    },
+    "590": {
+      "branch": 12,
+      "fn": "VRFConsumer.getRandomNumber",
+      "offset": [
+        1041,
+        1133
+      ],
+      "op": "JUMPI",
+      "path": "4"
+    },
+    "591": {
+      "fn": "VRFConsumer.getRandomNumber",
+      "offset": [
+        1041,
+        1133
+      ],
+      "op": "PUSH1",
+      "path": "4",
+      "value": "0x40"
+    },
+    "593": {
+      "fn": "VRFConsumer.getRandomNumber",
+      "offset": [
+        1041,
+        1133
+      ],
+      "op": "MLOAD",
+      "path": "4"
+    },
+    "594": {
+      "op": "PUSH3",
+      "value": "0x461BCD"
+    },
+    "598": {
+      "op": "PUSH1",
+      "value": "0xE5"
+    },
+    "600": {
+      "op": "SHL"
+    },
+    "601": {
+      "fn": "VRFConsumer.getRandomNumber",
+      "offset": [
+        1041,
+        1133
+      ],
+      "op": "DUP2",
+      "path": "4"
+    },
+    "602": {
+      "fn": "VRFConsumer.getRandomNumber",
+      "offset": [
+        1041,
+        1133
+      ],
+      "op": "MSTORE",
+      "path": "4"
+    },
+    "603": {
+      "fn": "VRFConsumer.getRandomNumber",
+      "offset": [
+        1041,
+        1133
+      ],
+      "op": "PUSH1",
+      "path": "4",
+      "value": "0x4"
+    },
+    "605": {
+      "fn": "VRFConsumer.getRandomNumber",
+      "offset": [
+        1041,
+        1133
+      ],
+      "op": "ADD",
+      "path": "4"
+    },
+    "606": {
+      "fn": "VRFConsumer.getRandomNumber",
+      "offset": [
+        1041,
+        1133
+      ],
+      "op": "DUP1",
+      "path": "4"
+    },
+    "607": {
+      "fn": "VRFConsumer.getRandomNumber",
+      "offset": [
+        1041,
+        1133
+      ],
+      "op": "DUP1",
+      "path": "4"
+    },
+    "608": {
+      "fn": "VRFConsumer.getRandomNumber",
+      "offset": [
+        1041,
+        1133
+      ],
+      "op": "PUSH1",
+      "path": "4",
+      "value": "0x20"
+    },
+    "610": {
+      "fn": "VRFConsumer.getRandomNumber",
+      "offset": [
+        1041,
+        1133
+      ],
+      "op": "ADD",
+      "path": "4"
+    },
+    "611": {
+      "fn": "VRFConsumer.getRandomNumber",
+      "offset": [
+        1041,
+        1133
+      ],
+      "op": "DUP3",
+      "path": "4"
+    },
+    "612": {
+      "fn": "VRFConsumer.getRandomNumber",
+      "offset": [
+        1041,
+        1133
+      ],
+      "op": "DUP2",
+      "path": "4"
+    },
+    "613": {
+      "fn": "VRFConsumer.getRandomNumber",
+      "offset": [
+        1041,
+        1133
+      ],
+      "op": "SUB",
+      "path": "4"
+    },
+    "614": {
+      "fn": "VRFConsumer.getRandomNumber",
+      "offset": [
+        1041,
+        1133
+      ],
+      "op": "DUP3",
+      "path": "4"
+    },
+    "615": {
+      "fn": "VRFConsumer.getRandomNumber",
+      "offset": [
+        1041,
+        1133
+      ],
+      "op": "MSTORE",
+      "path": "4"
+    },
+    "616": {
+      "fn": "VRFConsumer.getRandomNumber",
+      "offset": [
+        1041,
+        1133
+      ],
+      "op": "PUSH1",
+      "path": "4",
+      "value": "0x2B"
+    },
+    "618": {
+      "fn": "VRFConsumer.getRandomNumber",
+      "offset": [
+        1041,
+        1133
+      ],
+      "op": "DUP2",
+      "path": "4"
+    },
+    "619": {
+      "fn": "VRFConsumer.getRandomNumber",
+      "offset": [
+        1041,
+        1133
+      ],
+      "op": "MSTORE",
+      "path": "4"
+    },
+    "620": {
+      "fn": "VRFConsumer.getRandomNumber",
+      "offset": [
+        1041,
+        1133
+      ],
+      "op": "PUSH1",
+      "path": "4",
+      "value": "0x20"
+    },
+    "622": {
+      "fn": "VRFConsumer.getRandomNumber",
+      "offset": [
+        1041,
+        1133
+      ],
+      "op": "ADD",
+      "path": "4"
+    },
+    "623": {
+      "fn": "VRFConsumer.getRandomNumber",
+      "offset": [
+        1041,
+        1133
+      ],
+      "op": "DUP1",
+      "path": "4"
+    },
+    "624": {
+      "fn": "VRFConsumer.getRandomNumber",
+      "offset": [
+        1041,
+        1133
+      ],
+      "op": "PUSH2",
+      "path": "4",
+      "value": "0x537"
+    },
+    "627": {
+      "fn": "VRFConsumer.getRandomNumber",
+      "offset": [
+        1041,
+        1133
+      ],
+      "op": "PUSH1",
+      "path": "4",
+      "value": "0x2B"
+    },
+    "629": {
+      "fn": "VRFConsumer.getRandomNumber",
+      "offset": [
+        1041,
+        1133
+      ],
+      "op": "SWAP2",
+      "path": "4"
+    },
+    "630": {
+      "fn": "VRFConsumer.getRandomNumber",
+      "offset": [
+        1041,
+        1133
+      ],
+      "op": "CODECOPY",
+      "path": "4"
+    },
+    "631": {
+      "fn": "VRFConsumer.getRandomNumber",
+      "offset": [
+        1041,
+        1133
+      ],
+      "op": "PUSH1",
+      "path": "4",
+      "value": "0x40"
+    },
+    "633": {
+      "fn": "VRFConsumer.getRandomNumber",
+      "offset": [
+        1041,
+        1133
+      ],
+      "op": "ADD",
+      "path": "4"
+    },
+    "634": {
+      "fn": "VRFConsumer.getRandomNumber",
+      "offset": [
+        1041,
+        1133
+      ],
+      "op": "SWAP2",
+      "path": "4"
+    },
+    "635": {
+      "fn": "VRFConsumer.getRandomNumber",
+      "offset": [
+        1041,
+        1133
+      ],
+      "op": "POP",
+      "path": "4"
+    },
+    "636": {
+      "fn": "VRFConsumer.getRandomNumber",
+      "offset": [
+        1041,
+        1133
+      ],
+      "op": "POP",
+      "path": "4"
+    },
+    "637": {
+      "fn": "VRFConsumer.getRandomNumber",
+      "offset": [
+        1041,
+        1133
+      ],
+      "op": "PUSH1",
+      "path": "4",
+      "value": "0x40"
+    },
+    "639": {
+      "fn": "VRFConsumer.getRandomNumber",
+      "offset": [
+        1041,
+        1133
+      ],
+      "op": "MLOAD",
+      "path": "4"
+    },
+    "640": {
+      "fn": "VRFConsumer.getRandomNumber",
+      "offset": [
+        1041,
+        1133
+      ],
+      "op": "DUP1",
+      "path": "4"
+    },
+    "641": {
+      "fn": "VRFConsumer.getRandomNumber",
+      "offset": [
+        1041,
+        1133
+      ],
+      "op": "SWAP2",
+      "path": "4"
+    },
+    "642": {
+      "fn": "VRFConsumer.getRandomNumber",
+      "offset": [
+        1041,
+        1133
+      ],
+      "op": "SUB",
+      "path": "4"
+    },
+    "643": {
+      "fn": "VRFConsumer.getRandomNumber",
+      "offset": [
+        1041,
+        1133
+      ],
+      "op": "SWAP1",
+      "path": "4"
+    },
+    "644": {
+      "fn": "VRFConsumer.getRandomNumber",
+      "offset": [
+        1041,
+        1133
+      ],
+      "op": "REVERT",
+      "path": "4"
+    },
+    "645": {
+      "fn": "VRFConsumer.getRandomNumber",
+      "offset": [
+        1041,
+        1133
+      ],
+      "op": "JUMPDEST",
+      "path": "4"
+    },
+    "646": {
+      "fn": "VRFConsumer.getRandomNumber",
+      "offset": [
+        1150,
+        1199
+      ],
+      "op": "PUSH2",
+      "path": "4",
+      "statement": 3,
+      "value": "0x294"
+    },
+    "649": {
+      "fn": "VRFConsumer.getRandomNumber",
+      "offset": [
+        1168,
+        1175
+      ],
+      "op": "PUSH1",
+      "path": "4",
+      "value": "0x1"
+    },
+    "651": {
+      "fn": "VRFConsumer.getRandomNumber",
+      "offset": [
+        1168,
+        1175
+      ],
+      "op": "SLOAD",
+      "path": "4"
+    },
+    "652": {
+      "fn": "VRFConsumer.getRandomNumber",
+      "offset": [
+        1177,
+        1180
+      ],
+      "op": "PUSH1",
+      "path": "4",
+      "value": "0x2"
+    },
+    "654": {
+      "fn": "VRFConsumer.getRandomNumber",
+      "offset": [
+        1177,
+        1180
+      ],
+      "op": "SLOAD",
+      "path": "4"
+    },
+    "655": {
+      "fn": "VRFConsumer.getRandomNumber",
+      "offset": [
+        1182,
+        1198
+      ],
+      "op": "DUP5",
+      "path": "4"
+    },
+    "656": {
+      "fn": "VRFConsumer.getRandomNumber",
+      "offset": [
+        1150,
+        1167
+      ],
+      "op": "PUSH2",
+      "path": "4",
+      "value": "0x29A"
+    },
+    "659": {
+      "fn": "VRFConsumer.getRandomNumber",
+      "jump": "i",
+      "offset": [
+        1150,
+        1199
+      ],
+      "op": "JUMP",
+      "path": "4"
+    },
+    "660": {
+      "fn": "VRFConsumer.getRandomNumber",
+      "offset": [
+        1150,
+        1199
+      ],
+      "op": "JUMPDEST",
+      "path": "4"
+    },
+    "661": {
+      "fn": "VRFConsumer.getRandomNumber",
+      "offset": [
+        1143,
+        1199
+      ],
+      "op": "SWAP3",
+      "path": "4"
+    },
+    "662": {
+      "fn": "VRFConsumer.getRandomNumber",
+      "offset": [
+        945,
+        1206
+      ],
+      "op": "SWAP2",
+      "path": "4"
+    },
+    "663": {
+      "op": "POP"
+    },
+    "664": {
+      "op": "POP"
+    },
+    "665": {
+      "fn": "VRFConsumer.getRandomNumber",
+      "jump": "o",
+      "offset": [
+        945,
+        1206
+      ],
+      "op": "JUMP",
+      "path": "4"
+    },
+    "666": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5658,
+        6608
+      ],
+      "op": "JUMPDEST",
+      "path": "0"
+    },
+    "667": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5752,
+        5769
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x0"
+    },
+    "669": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5783
+      ],
+      "op": "PUSH32",
+      "path": "0",
+      "statement": 4,
+      "value": "0x0"
+    },
+    "702": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "704": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "706": {
+      "op": "PUSH1",
+      "value": "0xA0"
+    },
+    "708": {
+      "op": "SHL"
+    },
+    "709": {
+      "op": "SUB"
+    },
+    "710": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5799
+      ],
+      "op": "AND",
+      "path": "0"
+    },
+    "711": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5799
+      ],
+      "op": "PUSH4",
+      "path": "0",
+      "value": "0x4000AEA0"
+    },
+    "716": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5800,
+        5814
+      ],
+      "op": "PUSH32",
+      "path": "0",
+      "value": "0x0"
+    },
+    "749": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5816,
+        5820
+      ],
+      "op": "DUP6",
+      "path": "0"
+    },
+    "750": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5833,
+        5841
+      ],
+      "op": "DUP8",
+      "path": "0"
+    },
+    "751": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5843,
+        5848
+      ],
+      "op": "DUP7",
+      "path": "0"
+    },
+    "752": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5822,
+        5849
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x40"
+    },
+    "754": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5822,
+        5849
+      ],
+      "op": "MLOAD",
+      "path": "0"
+    },
+    "755": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5822,
+        5849
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x20"
+    },
+    "757": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5822,
+        5849
+      ],
+      "op": "ADD",
+      "path": "0"
+    },
+    "758": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5822,
+        5849
+      ],
+      "op": "DUP1",
+      "path": "0"
+    },
+    "759": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5822,
+        5849
+      ],
+      "op": "DUP4",
+      "path": "0"
+    },
+    "760": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5822,
+        5849
+      ],
+      "op": "DUP2",
+      "path": "0"
+    },
+    "761": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5822,
+        5849
+      ],
+      "op": "MSTORE",
+      "path": "0"
+    },
+    "762": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5822,
+        5849
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x20"
+    },
+    "764": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5822,
+        5849
+      ],
+      "op": "ADD",
+      "path": "0"
+    },
+    "765": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5822,
+        5849
+      ],
+      "op": "DUP3",
+      "path": "0"
+    },
+    "766": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5822,
+        5849
+      ],
+      "op": "DUP2",
+      "path": "0"
+    },
+    "767": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5822,
+        5849
+      ],
+      "op": "MSTORE",
+      "path": "0"
+    },
+    "768": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5822,
+        5849
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x20"
+    },
+    "770": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5822,
+        5849
+      ],
+      "op": "ADD",
+      "path": "0"
+    },
+    "771": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5822,
+        5849
+      ],
+      "op": "SWAP3",
+      "path": "0"
+    },
+    "772": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5822,
+        5849
+      ],
+      "op": "POP",
+      "path": "0"
+    },
+    "773": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5822,
+        5849
+      ],
+      "op": "POP",
+      "path": "0"
+    },
+    "774": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5822,
+        5849
+      ],
+      "op": "POP",
+      "path": "0"
+    },
+    "775": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5822,
+        5849
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x40"
+    },
+    "777": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5822,
+        5849
+      ],
+      "op": "MLOAD",
+      "path": "0"
+    },
+    "778": {
+      "op": "PUSH1",
+      "value": "0x20"
+    },
+    "780": {
+      "op": "DUP2"
+    },
+    "781": {
+      "op": "DUP4"
+    },
+    "782": {
+      "op": "SUB"
+    },
+    "783": {
+      "op": "SUB"
+    },
+    "784": {
+      "op": "DUP2"
+    },
+    "785": {
+      "op": "MSTORE"
+    },
+    "786": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5822,
+        5849
+      ],
+      "op": "SWAP1",
+      "path": "0"
+    },
+    "787": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5822,
+        5849
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x40"
+    },
+    "789": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5822,
+        5849
+      ],
+      "op": "MSTORE",
+      "path": "0"
+    },
+    "790": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x40"
+    },
+    "792": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "MLOAD",
+      "path": "0"
+    },
+    "793": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "DUP5",
+      "path": "0"
+    },
+    "794": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "PUSH4",
+      "path": "0",
+      "value": "0xFFFFFFFF"
+    },
+    "799": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "AND",
+      "path": "0"
+    },
+    "800": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0xE0"
+    },
+    "802": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "SHL",
+      "path": "0"
+    },
+    "803": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "DUP2",
+      "path": "0"
+    },
+    "804": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "MSTORE",
+      "path": "0"
+    },
+    "805": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x4"
+    },
+    "807": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "ADD",
+      "path": "0"
+    },
+    "808": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "DUP1",
+      "path": "0"
+    },
+    "809": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "DUP5",
+      "path": "0"
+    },
+    "810": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "812": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "814": {
+      "op": "PUSH1",
+      "value": "0xA0"
+    },
+    "816": {
+      "op": "SHL"
+    },
+    "817": {
+      "op": "SUB"
+    },
+    "818": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "AND",
+      "path": "0"
+    },
+    "819": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "821": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "823": {
+      "op": "PUSH1",
+      "value": "0xA0"
+    },
+    "825": {
+      "op": "SHL"
+    },
+    "826": {
+      "op": "SUB"
+    },
+    "827": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "AND",
+      "path": "0"
+    },
+    "828": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "DUP2",
+      "path": "0"
+    },
+    "829": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "MSTORE",
+      "path": "0"
+    },
+    "830": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x20"
+    },
+    "832": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "ADD",
+      "path": "0"
+    },
+    "833": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "DUP4",
+      "path": "0"
+    },
+    "834": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "DUP2",
+      "path": "0"
+    },
+    "835": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "MSTORE",
+      "path": "0"
+    },
+    "836": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x20"
+    },
+    "838": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "ADD",
+      "path": "0"
+    },
+    "839": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "DUP1",
+      "path": "0"
+    },
+    "840": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x20"
+    },
+    "842": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "ADD",
+      "path": "0"
+    },
+    "843": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "DUP3",
+      "path": "0"
+    },
+    "844": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "DUP2",
+      "path": "0"
+    },
+    "845": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "SUB",
+      "path": "0"
+    },
+    "846": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "DUP3",
+      "path": "0"
+    },
+    "847": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "MSTORE",
+      "path": "0"
+    },
+    "848": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "DUP4",
+      "path": "0"
+    },
+    "849": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "DUP2",
+      "path": "0"
+    },
+    "850": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "DUP2",
+      "path": "0"
+    },
+    "851": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "MLOAD",
+      "path": "0"
+    },
+    "852": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "DUP2",
+      "path": "0"
+    },
+    "853": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "MSTORE",
+      "path": "0"
+    },
+    "854": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x20"
+    },
+    "856": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "ADD",
+      "path": "0"
+    },
+    "857": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "SWAP2",
+      "path": "0"
+    },
+    "858": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "POP",
+      "path": "0"
+    },
+    "859": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "DUP1",
+      "path": "0"
+    },
+    "860": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "MLOAD",
+      "path": "0"
+    },
+    "861": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "SWAP1",
+      "path": "0"
+    },
+    "862": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x20"
+    },
+    "864": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "ADD",
+      "path": "0"
+    },
+    "865": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "SWAP1",
+      "path": "0"
+    },
+    "866": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "DUP1",
+      "path": "0"
+    },
+    "867": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "DUP4",
+      "path": "0"
+    },
+    "868": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "DUP4",
+      "path": "0"
+    },
+    "869": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "871": {
+      "op": "JUMPDEST"
+    },
+    "872": {
+      "op": "DUP4"
+    },
+    "873": {
+      "op": "DUP2"
+    },
+    "874": {
+      "op": "LT"
+    },
+    "875": {
+      "op": "ISZERO"
+    },
+    "876": {
+      "op": "PUSH2",
+      "value": "0x37F"
+    },
+    "879": {
+      "op": "JUMPI"
+    },
+    "880": {
+      "op": "DUP2"
+    },
+    "881": {
+      "op": "DUP2"
+    },
+    "882": {
+      "op": "ADD"
+    },
+    "883": {
+      "op": "MLOAD"
+    },
+    "884": {
+      "op": "DUP4"
+    },
+    "885": {
+      "op": "DUP3"
+    },
+    "886": {
+      "op": "ADD"
+    },
+    "887": {
+      "op": "MSTORE"
+    },
+    "888": {
+      "op": "PUSH1",
+      "value": "0x20"
+    },
+    "890": {
+      "op": "ADD"
+    },
+    "891": {
+      "op": "PUSH2",
+      "value": "0x367"
+    },
+    "894": {
+      "op": "JUMP"
+    },
+    "895": {
+      "op": "JUMPDEST"
+    },
+    "896": {
+      "op": "POP"
+    },
+    "897": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "POP",
+      "path": "0"
+    },
+    "898": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "POP",
+      "path": "0"
+    },
+    "899": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "POP",
+      "path": "0"
+    },
+    "900": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "SWAP1",
+      "path": "0"
+    },
+    "901": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "POP",
+      "path": "0"
+    },
+    "902": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "SWAP1",
+      "path": "0"
+    },
+    "903": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "DUP2",
+      "path": "0"
+    },
+    "904": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "ADD",
+      "path": "0"
+    },
+    "905": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "SWAP1",
+      "path": "0"
+    },
+    "906": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x1F"
+    },
+    "908": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "AND",
+      "path": "0"
+    },
+    "909": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "DUP1",
+      "path": "0"
+    },
+    "910": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "ISZERO",
+      "path": "0"
+    },
+    "911": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x3AC"
+    },
+    "914": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "JUMPI",
+      "path": "0"
+    },
+    "915": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "DUP1",
+      "path": "0"
+    },
+    "916": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "DUP3",
+      "path": "0"
+    },
+    "917": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "SUB",
+      "path": "0"
+    },
+    "918": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "DUP1",
+      "path": "0"
+    },
+    "919": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "MLOAD",
+      "path": "0"
+    },
+    "920": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x1"
+    },
+    "922": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "DUP4",
+      "path": "0"
+    },
+    "923": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x20"
+    },
+    "925": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "SUB",
+      "path": "0"
+    },
+    "926": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x100"
+    },
+    "929": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "EXP",
+      "path": "0"
+    },
+    "930": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "SUB",
+      "path": "0"
+    },
+    "931": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "NOT",
+      "path": "0"
+    },
+    "932": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "AND",
+      "path": "0"
+    },
+    "933": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "DUP2",
+      "path": "0"
+    },
+    "934": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "MSTORE",
+      "path": "0"
+    },
+    "935": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x20"
+    },
+    "937": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "ADD",
+      "path": "0"
+    },
+    "938": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "SWAP2",
+      "path": "0"
+    },
+    "939": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "POP",
+      "path": "0"
+    },
+    "940": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "JUMPDEST",
+      "path": "0"
+    },
+    "941": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "POP",
+      "path": "0"
+    },
+    "942": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "SWAP5",
+      "path": "0"
+    },
+    "943": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "POP",
+      "path": "0"
+    },
+    "944": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "POP",
+      "path": "0"
+    },
+    "945": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "POP",
+      "path": "0"
+    },
+    "946": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "POP",
+      "path": "0"
+    },
+    "947": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "POP",
+      "path": "0"
+    },
+    "948": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x20"
+    },
+    "950": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x40"
+    },
+    "952": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "MLOAD",
+      "path": "0"
+    },
+    "953": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "DUP1",
+      "path": "0"
+    },
+    "954": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "DUP4",
+      "path": "0"
+    },
+    "955": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "SUB",
+      "path": "0"
+    },
+    "956": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "DUP2",
+      "path": "0"
+    },
+    "957": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x0"
+    },
+    "959": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "DUP8",
+      "path": "0"
+    },
+    "960": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "DUP1",
+      "path": "0"
+    },
+    "961": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "EXTCODESIZE",
+      "path": "0"
+    },
+    "962": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "ISZERO",
+      "path": "0"
+    },
+    "963": {
+      "op": "DUP1"
+    },
+    "964": {
+      "op": "ISZERO"
+    },
+    "965": {
+      "op": "PUSH2",
+      "value": "0x3CD"
+    },
+    "968": {
+      "op": "JUMPI"
+    },
+    "969": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "971": {
+      "op": "DUP1"
+    },
+    "972": {
+      "op": "REVERT"
+    },
+    "973": {
+      "op": "JUMPDEST"
+    },
+    "974": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "POP",
+      "path": "0"
+    },
+    "975": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "GAS",
+      "path": "0"
+    },
+    "976": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "CALL",
+      "path": "0"
+    },
+    "977": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "ISZERO",
+      "path": "0"
+    },
+    "978": {
+      "op": "DUP1"
+    },
+    "979": {
+      "op": "ISZERO"
+    },
+    "980": {
+      "op": "PUSH2",
+      "value": "0x3E1"
+    },
+    "983": {
+      "op": "JUMPI"
+    },
+    "984": {
+      "op": "RETURNDATASIZE"
+    },
+    "985": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "987": {
+      "op": "DUP1"
+    },
+    "988": {
+      "op": "RETURNDATACOPY"
+    },
+    "989": {
+      "op": "RETURNDATASIZE"
+    },
+    "990": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "992": {
+      "op": "REVERT"
+    },
+    "993": {
+      "op": "JUMPDEST"
+    },
+    "994": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "POP",
+      "path": "0"
+    },
+    "995": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "POP",
+      "path": "0"
+    },
+    "996": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "POP",
+      "path": "0"
+    },
+    "997": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "POP",
+      "path": "0"
+    },
+    "998": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x40"
+    },
+    "1000": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "MLOAD",
+      "path": "0"
+    },
+    "1001": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "RETURNDATASIZE",
+      "path": "0"
+    },
+    "1002": {
+      "op": "PUSH1",
+      "value": "0x20"
+    },
+    "1004": {
+      "op": "DUP2"
+    },
+    "1005": {
+      "op": "LT"
+    },
+    "1006": {
+      "op": "ISZERO"
+    },
+    "1007": {
+      "op": "PUSH2",
+      "value": "0x3F7"
+    },
+    "1010": {
+      "op": "JUMPI"
+    },
+    "1011": {
+      "op": "PUSH1",
+      "value": "0x0"
+    },
+    "1013": {
+      "op": "DUP1"
+    },
+    "1014": {
+      "op": "REVERT"
+    },
+    "1015": {
+      "op": "JUMPDEST"
+    },
+    "1016": {
+      "op": "POP"
+    },
+    "1017": {
+      "op": "POP"
+    },
+    "1018": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        6081,
+        6096
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x0"
+    },
+    "1020": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        6149,
+        6165
+      ],
+      "op": "DUP5",
+      "path": "0"
+    },
+    "1021": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        6149,
+        6165
+      ],
+      "op": "DUP2",
+      "path": "0"
+    },
+    "1022": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        6149,
+        6165
+      ],
+      "op": "MSTORE",
+      "path": "0"
+    },
+    "1023": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5779,
+        5850
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x20"
+    },
+    "1025": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        6149,
+        6165
+      ],
+      "op": "DUP2",
+      "path": "0"
+    },
+    "1026": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        6149,
+        6165
+      ],
+      "op": "SWAP1",
+      "path": "0"
+    },
+    "1027": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        6149,
+        6165
+      ],
+      "op": "MSTORE",
+      "path": "0"
+    },
+    "1028": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        6149,
+        6165
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x40"
+    },
+    "1030": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        6149,
+        6165
+      ],
+      "op": "DUP2",
+      "path": "0"
+    },
+    "1031": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        6149,
+        6165
+      ],
+      "op": "KECCAK256",
+      "path": "0"
+    },
+    "1032": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        6149,
+        6165
+      ],
+      "op": "SLOAD",
+      "path": "0"
+    },
+    "1033": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        6100,
+        6166
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x417"
+    },
+    "1036": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        6100,
+        6166
+      ],
+      "op": "SWAP1",
+      "path": "0"
+    },
+    "1037": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        6117,
+        6125
+      ],
+      "op": "DUP7",
+      "path": "0"
+    },
+    "1038": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        6117,
+        6125
+      ],
+      "op": "SWAP1",
+      "path": "0"
+    },
+    "1039": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        6127,
+        6132
+      ],
+      "op": "DUP6",
+      "path": "0"
+    },
+    "1040": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        6127,
+        6132
+      ],
+      "op": "SWAP1",
+      "path": "0"
+    },
+    "1041": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        6142,
+        6146
+      ],
+      "op": "ADDRESS",
+      "path": "0"
+    },
+    "1042": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        6142,
+        6146
+      ],
+      "op": "SWAP1",
+      "path": "0"
+    },
+    "1043": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        6100,
+        6116
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x462"
+    },
+    "1046": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "jump": "i",
+      "offset": [
+        6100,
+        6166
+      ],
+      "op": "JUMP",
+      "path": "0"
+    },
+    "1047": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        6100,
+        6166
+      ],
+      "op": "JUMPDEST",
+      "path": "0"
+    },
+    "1048": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        6535,
+        6541
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "statement": 5,
+      "value": "0x0"
+    },
+    "1050": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        6535,
+        6551
+      ],
+      "op": "DUP7",
+      "path": "0"
+    },
+    "1051": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        6535,
+        6551
+      ],
+      "op": "DUP2",
+      "path": "0"
+    },
+    "1052": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        6535,
+        6551
+      ],
+      "op": "MSTORE",
+      "path": "0"
+    },
+    "1053": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        6535,
+        6551
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x20"
+    },
+    "1055": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        6535,
+        6551
+      ],
+      "op": "DUP2",
+      "path": "0"
+    },
+    "1056": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        6535,
+        6551
+      ],
+      "op": "SWAP1",
+      "path": "0"
+    },
+    "1057": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        6535,
+        6551
+      ],
+      "op": "MSTORE",
+      "path": "0"
+    },
+    "1058": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        6535,
+        6551
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x40"
+    },
+    "1060": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        6535,
+        6551
+      ],
+      "op": "SWAP1",
+      "path": "0"
+    },
+    "1061": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        6535,
+        6551
+      ],
+      "op": "KECCAK256",
+      "path": "0"
+    },
+    "1062": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        6535,
+        6551
+      ],
+      "op": "SLOAD",
+      "path": "0"
+    },
+    "1063": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        6081,
+        6166
+      ],
+      "op": "SWAP1",
+      "path": "0"
+    },
+    "1064": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        6081,
+        6166
+      ],
+      "op": "SWAP2",
+      "path": "0"
+    },
+    "1065": {
+      "op": "POP"
+    },
+    "1066": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        6535,
+        6558
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x43A"
+    },
+    "1069": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        6535,
+        6558
+      ],
+      "op": "SWAP1",
+      "path": "0"
+    },
+    "1070": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        6556,
+        6557
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x1"
+    },
+    "1072": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        6535,
+        6558
+      ],
+      "op": "PUSH4",
+      "path": "0",
+      "value": "0xFFFFFFFF"
+    },
+    "1077": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        6535,
+        6555
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x4A9"
+    },
+    "1080": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        6535,
+        6558
+      ],
+      "op": "AND",
+      "path": "0"
+    },
+    "1081": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "jump": "i",
+      "offset": [
+        6535,
+        6558
+      ],
+      "op": "JUMP",
+      "path": "0"
+    },
+    "1082": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        6535,
+        6558
+      ],
+      "op": "JUMPDEST",
+      "path": "0"
+    },
+    "1083": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        6516,
+        6522
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x0"
+    },
+    "1085": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        6516,
+        6532
+      ],
+      "op": "DUP7",
+      "path": "0"
+    },
+    "1086": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        6516,
+        6532
+      ],
+      "op": "DUP2",
+      "path": "0"
+    },
+    "1087": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        6516,
+        6532
+      ],
+      "op": "MSTORE",
+      "path": "0"
+    },
+    "1088": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        6516,
+        6532
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x20"
+    },
+    "1090": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        6516,
+        6532
+      ],
+      "op": "DUP2",
+      "path": "0"
+    },
+    "1091": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        6516,
+        6532
+      ],
+      "op": "SWAP1",
+      "path": "0"
+    },
+    "1092": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        6516,
+        6532
+      ],
+      "op": "MSTORE",
+      "path": "0"
+    },
+    "1093": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        6516,
+        6532
+      ],
+      "op": "PUSH1",
+      "path": "0",
+      "value": "0x40"
+    },
+    "1095": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        6516,
+        6532
+      ],
+      "op": "SWAP1",
+      "path": "0"
+    },
+    "1096": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        6516,
+        6532
+      ],
+      "op": "KECCAK256",
+      "path": "0"
+    },
+    "1097": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        6516,
+        6558
+      ],
+      "op": "SSTORE",
+      "path": "0"
+    },
+    "1098": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        6571,
+        6603
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "statement": 6,
+      "value": "0x453"
+    },
+    "1101": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        6523,
+        6531
+      ],
+      "op": "DUP6",
+      "path": "0"
+    },
+    "1102": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        6595,
+        6602
+      ],
+      "op": "DUP3",
+      "path": "0"
+    },
+    "1103": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        6571,
+        6584
+      ],
+      "op": "PUSH2",
+      "path": "0",
+      "value": "0x50A"
+    },
+    "1106": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "jump": "i",
+      "offset": [
+        6571,
+        6603
+      ],
+      "op": "JUMP",
+      "path": "0"
+    },
+    "1107": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        6571,
+        6603
+      ],
+      "op": "JUMPDEST",
+      "path": "0"
+    },
+    "1108": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        6564,
+        6603
+      ],
+      "op": "SWAP6",
+      "path": "0"
+    },
+    "1109": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "offset": [
+        5658,
+        6608
+      ],
+      "op": "SWAP5",
+      "path": "0"
+    },
+    "1110": {
+      "op": "POP"
+    },
+    "1111": {
+      "op": "POP"
+    },
+    "1112": {
+      "op": "POP"
+    },
+    "1113": {
+      "op": "POP"
+    },
+    "1114": {
+      "op": "POP"
+    },
+    "1115": {
+      "fn": "VRFConsumerBase.requestRandomness",
+      "jump": "o",
+      "offset": [
+        5658,
+        6608
+      ],
+      "op": "JUMP",
+      "path": "0"
+    },
+    "1116": {
+      "fn": "VRFConsumer.fulfillRandomness",
+      "offset": [
+        1277,
+        1403
+      ],
+      "op": "JUMPDEST",
+      "path": "4"
+    },
+    "1117": {
+      "fn": "VRFConsumer.fulfillRandomness",
+      "offset": [
+        1371,
+        1383
+      ],
+      "op": "PUSH1",
+      "path": "4",
+      "statement": 7,
+      "value": "0x3"
+    },
+    "1119": {
+      "fn": "VRFConsumer.fulfillRandomness",
+      "offset": [
+        1371,
+        1396
+      ],
+      "op": "SSTORE",
+      "path": "4"
+    },
+    "1120": {
+      "op": "POP"
+    },
+    "1121": {
+      "fn": "VRFConsumer.fulfillRandomness",
+      "jump": "o",
+      "offset": [
+        1277,
+        1403
+      ],
+      "op": "JUMP",
+      "path": "4"
+    },
+    "1122": {
+      "fn": "VRFRequestIDBase.makeVRFInputSeed",
+      "offset": [
+        765,
+        996
+      ],
+      "op": "JUMPDEST",
+      "path": "1"
+    },
+    "1123": {
+      "fn": "VRFRequestIDBase.makeVRFInputSeed",
+      "offset": [
+        938,
+        989
+      ],
+      "op": "PUSH1",
+      "path": "1",
+      "statement": 8,
+      "value": "0x40"
+    },
+    "1125": {
+      "fn": "VRFRequestIDBase.makeVRFInputSeed",
+      "offset": [
+        938,
+        989
+      ],
+      "op": "DUP1",
+      "path": "1"
+    },
+    "1126": {
+      "fn": "VRFRequestIDBase.makeVRFInputSeed",
+      "offset": [
+        938,
+        989
+      ],
+      "op": "MLOAD",
+      "path": "1"
+    },
+    "1127": {
+      "fn": "VRFRequestIDBase.makeVRFInputSeed",
+      "offset": [
+        938,
+        989
+      ],
+      "op": "PUSH1",
+      "path": "1",
+      "value": "0x20"
+    },
+    "1129": {
+      "fn": "VRFRequestIDBase.makeVRFInputSeed",
+      "offset": [
+        938,
+        989
+      ],
+      "op": "DUP1",
+      "path": "1"
+    },
+    "1130": {
+      "fn": "VRFRequestIDBase.makeVRFInputSeed",
+      "offset": [
+        938,
+        989
+      ],
+      "op": "DUP3",
+      "path": "1"
+    },
+    "1131": {
+      "fn": "VRFRequestIDBase.makeVRFInputSeed",
+      "offset": [
+        938,
+        989
+      ],
+      "op": "ADD",
+      "path": "1"
+    },
+    "1132": {
+      "fn": "VRFRequestIDBase.makeVRFInputSeed",
+      "offset": [
+        938,
+        989
+      ],
+      "op": "SWAP7",
+      "path": "1"
+    },
+    "1133": {
+      "fn": "VRFRequestIDBase.makeVRFInputSeed",
+      "offset": [
+        938,
+        989
+      ],
+      "op": "SWAP1",
+      "path": "1"
+    },
+    "1134": {
+      "fn": "VRFRequestIDBase.makeVRFInputSeed",
+      "offset": [
+        938,
+        989
+      ],
+      "op": "SWAP7",
+      "path": "1"
+    },
+    "1135": {
+      "fn": "VRFRequestIDBase.makeVRFInputSeed",
+      "offset": [
+        938,
+        989
+      ],
+      "op": "MSTORE",
+      "path": "1"
+    },
+    "1136": {
+      "fn": "VRFRequestIDBase.makeVRFInputSeed",
+      "offset": [
+        938,
+        989
+      ],
+      "op": "DUP1",
+      "path": "1"
+    },
+    "1137": {
+      "fn": "VRFRequestIDBase.makeVRFInputSeed",
+      "offset": [
+        938,
+        989
+      ],
+      "op": "DUP3",
+      "path": "1"
+    },
+    "1138": {
+      "fn": "VRFRequestIDBase.makeVRFInputSeed",
+      "offset": [
+        938,
+        989
+      ],
+      "op": "ADD",
+      "path": "1"
+    },
+    "1139": {
+      "fn": "VRFRequestIDBase.makeVRFInputSeed",
+      "offset": [
+        938,
+        989
+      ],
+      "op": "SWAP5",
+      "path": "1"
+    },
+    "1140": {
+      "fn": "VRFRequestIDBase.makeVRFInputSeed",
+      "offset": [
+        938,
+        989
+      ],
+      "op": "SWAP1",
+      "path": "1"
+    },
+    "1141": {
+      "fn": "VRFRequestIDBase.makeVRFInputSeed",
+      "offset": [
+        938,
+        989
+      ],
+      "op": "SWAP5",
+      "path": "1"
+    },
+    "1142": {
+      "fn": "VRFRequestIDBase.makeVRFInputSeed",
+      "offset": [
+        938,
+        989
+      ],
+      "op": "MSTORE",
+      "path": "1"
+    },
+    "1143": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "1145": {
+      "op": "PUSH1",
+      "value": "0x1"
+    },
+    "1147": {
+      "op": "PUSH1",
+      "value": "0xA0"
+    },
+    "1149": {
+      "op": "SHL"
+    },
+    "1150": {
+      "op": "SUB"
+    },
+    "1151": {
+      "fn": "VRFRequestIDBase.makeVRFInputSeed",
+      "offset": [
+        938,
+        989
+      ],
+      "op": "SWAP3",
+      "path": "1"
+    },
+    "1152": {
+      "fn": "VRFRequestIDBase.makeVRFInputSeed",
+      "offset": [
+        938,
+        989
+      ],
+      "op": "SWAP1",
+      "path": "1"
+    },
+    "1153": {
+      "fn": "VRFRequestIDBase.makeVRFInputSeed",
+      "offset": [
+        938,
+        989
+      ],
+      "op": "SWAP3",
+      "path": "1"
+    },
+    "1154": {
+      "fn": "VRFRequestIDBase.makeVRFInputSeed",
+      "offset": [
+        938,
+        989
+      ],
+      "op": "AND",
+      "path": "1"
+    },
+    "1155": {
+      "fn": "VRFRequestIDBase.makeVRFInputSeed",
+      "offset": [
+        938,
+        989
+      ],
+      "op": "PUSH1",
+      "path": "1",
+      "value": "0x60"
+    },
+    "1157": {
+      "fn": "VRFRequestIDBase.makeVRFInputSeed",
+      "offset": [
+        938,
+        989
+      ],
+      "op": "DUP5",
+      "path": "1"
+    },
+    "1158": {
+      "fn": "VRFRequestIDBase.makeVRFInputSeed",
+      "offset": [
+        938,
+        989
+      ],
+      "op": "ADD",
+      "path": "1"
+    },
+    "1159": {
+      "fn": "VRFRequestIDBase.makeVRFInputSeed",
+      "offset": [
+        938,
+        989
+      ],
+      "op": "MSTORE",
+      "path": "1"
+    },
+    "1160": {
+      "fn": "VRFRequestIDBase.makeVRFInputSeed",
+      "offset": [
+        938,
+        989
+      ],
+      "op": "PUSH1",
+      "path": "1",
+      "value": "0x80"
+    },
+    "1162": {
+      "fn": "VRFRequestIDBase.makeVRFInputSeed",
+      "offset": [
+        938,
+        989
+      ],
+      "op": "DUP1",
+      "path": "1"
+    },
+    "1163": {
+      "fn": "VRFRequestIDBase.makeVRFInputSeed",
+      "offset": [
+        938,
+        989
+      ],
+      "op": "DUP5",
+      "path": "1"
+    },
+    "1164": {
+      "fn": "VRFRequestIDBase.makeVRFInputSeed",
+      "offset": [
+        938,
+        989
+      ],
+      "op": "ADD",
+      "path": "1"
+    },
+    "1165": {
+      "fn": "VRFRequestIDBase.makeVRFInputSeed",
+      "offset": [
+        938,
+        989
+      ],
+      "op": "SWAP2",
+      "path": "1"
+    },
+    "1166": {
+      "fn": "VRFRequestIDBase.makeVRFInputSeed",
+      "offset": [
+        938,
+        989
+      ],
+      "op": "SWAP1",
+      "path": "1"
+    },
+    "1167": {
+      "fn": "VRFRequestIDBase.makeVRFInputSeed",
+      "offset": [
+        938,
+        989
+      ],
+      "op": "SWAP2",
+      "path": "1"
+    },
+    "1168": {
+      "fn": "VRFRequestIDBase.makeVRFInputSeed",
+      "offset": [
+        938,
+        989
+      ],
+      "op": "MSTORE",
+      "path": "1"
+    },
+    "1169": {
+      "fn": "VRFRequestIDBase.makeVRFInputSeed",
+      "offset": [
+        938,
+        989
+      ],
+      "op": "DUP2",
+      "path": "1"
+    },
+    "1170": {
+      "fn": "VRFRequestIDBase.makeVRFInputSeed",
+      "offset": [
+        938,
+        989
+      ],
+      "op": "MLOAD",
+      "path": "1"
+    },
+    "1171": {
+      "op": "DUP1"
+    },
+    "1172": {
+      "op": "DUP5"
+    },
+    "1173": {
+      "op": "SUB"
+    },
+    "1174": {
+      "op": "SWAP1"
+    },
+    "1175": {
+      "op": "SWAP2"
+    },
+    "1176": {
+      "op": "ADD"
+    },
+    "1177": {
+      "op": "DUP2"
+    },
+    "1178": {
+      "op": "MSTORE"
+    },
+    "1179": {
+      "fn": "VRFRequestIDBase.makeVRFInputSeed",
+      "offset": [
+        938,
+        989
+      ],
+      "op": "PUSH1",
+      "path": "1",
+      "value": "0xA0"
+    },
+    "1181": {
+      "fn": "VRFRequestIDBase.makeVRFInputSeed",
+      "offset": [
+        938,
+        989
+      ],
+      "op": "SWAP1",
+      "path": "1"
+    },
+    "1182": {
+      "fn": "VRFRequestIDBase.makeVRFInputSeed",
+      "offset": [
+        938,
+        989
+      ],
+      "op": "SWAP3",
+      "path": "1"
+    },
+    "1183": {
+      "fn": "VRFRequestIDBase.makeVRFInputSeed",
+      "offset": [
+        938,
+        989
+      ],
+      "op": "ADD",
+      "path": "1"
+    },
+    "1184": {
+      "fn": "VRFRequestIDBase.makeVRFInputSeed",
+      "offset": [
+        938,
+        989
+      ],
+      "op": "SWAP1",
+      "path": "1"
+    },
+    "1185": {
+      "fn": "VRFRequestIDBase.makeVRFInputSeed",
+      "offset": [
+        938,
+        989
+      ],
+      "op": "MSTORE",
+      "path": "1"
+    },
+    "1186": {
+      "fn": "VRFRequestIDBase.makeVRFInputSeed",
+      "offset": [
+        928,
+        990
+      ],
+      "op": "DUP1",
+      "path": "1"
+    },
+    "1187": {
+      "fn": "VRFRequestIDBase.makeVRFInputSeed",
+      "offset": [
+        928,
+        990
+      ],
+      "op": "MLOAD",
+      "path": "1"
+    },
+    "1188": {
+      "fn": "VRFRequestIDBase.makeVRFInputSeed",
+      "offset": [
+        928,
+        990
+      ],
+      "op": "SWAP2",
+      "path": "1"
+    },
+    "1189": {
+      "fn": "VRFRequestIDBase.makeVRFInputSeed",
+      "offset": [
+        928,
+        990
+      ],
+      "op": "ADD",
+      "path": "1"
+    },
+    "1190": {
+      "fn": "VRFRequestIDBase.makeVRFInputSeed",
+      "offset": [
+        928,
+        990
+      ],
+      "op": "KECCAK256",
+      "path": "1"
+    },
+    "1191": {
+      "fn": "VRFRequestIDBase.makeVRFInputSeed",
+      "offset": [
+        928,
+        990
+      ],
+      "op": "SWAP1",
+      "path": "1"
+    },
+    "1192": {
+      "fn": "VRFRequestIDBase.makeVRFInputSeed",
+      "jump": "o",
+      "offset": [
+        765,
+        996
+      ],
+      "op": "JUMP",
+      "path": "1"
+    },
+    "1193": {
+      "fn": "SafeMath.add",
+      "offset": [
+        822,
+        984
+      ],
+      "op": "JUMPDEST",
+      "path": "3"
+    },
+    "1194": {
+      "fn": "SafeMath.add",
+      "offset": [
+        880,
+        887
+      ],
+      "op": "PUSH1",
+      "path": "3",
+      "value": "0x0"
+    },
+    "1196": {
+      "fn": "SafeMath.add",
+      "offset": [
+        907,
+        912
+      ],
+      "op": "DUP3",
+      "path": "3"
+    },
+    "1197": {
+      "fn": "SafeMath.add",
+      "offset": [
+        907,
+        912
+      ],
+      "op": "DUP3",
+      "path": "3"
+    },
+    "1198": {
+      "fn": "SafeMath.add",
+      "offset": [
+        907,
+        912
+      ],
+      "op": "ADD",
+      "path": "3"
+    },
+    "1199": {
+      "fn": "SafeMath.add",
+      "offset": [
+        926,
+        932
+      ],
+      "op": "DUP4",
+      "path": "3",
+      "statement": 9
+    },
+    "1200": {
+      "fn": "SafeMath.add",
+      "offset": [
+        926,
+        932
+      ],
+      "op": "DUP2",
+      "path": "3"
+    },
+    "1201": {
+      "fn": "SafeMath.add",
+      "offset": [
+        926,
+        932
+      ],
+      "op": "LT",
+      "path": "3"
+    },
+    "1202": {
+      "branch": 13,
+      "fn": "SafeMath.add",
+      "offset": [
+        926,
+        932
+      ],
+      "op": "ISZERO",
+      "path": "3"
+    },
+    "1203": {
+      "fn": "SafeMath.add",
+      "offset": [
+        918,
+        964
+      ],
+      "op": "PUSH2",
+      "path": "3",
+      "value": "0x503"
+    },
+    "1206": {
+      "branch": 13,
+      "fn": "SafeMath.add",
+      "offset": [
+        918,
+        964
+      ],
+      "op": "JUMPI",
+      "path": "3"
+    },
+    "1207": {
+      "fn": "SafeMath.add",
+      "offset": [
+        918,
+        964
+      ],
+      "op": "PUSH1",
+      "path": "3",
+      "value": "0x40"
+    },
+    "1209": {
+      "fn": "SafeMath.add",
+      "offset": [
+        918,
+        964
+      ],
+      "op": "DUP1",
+      "path": "3"
+    },
+    "1210": {
+      "fn": "SafeMath.add",
+      "offset": [
+        918,
+        964
+      ],
+      "op": "MLOAD",
+      "path": "3"
+    },
+    "1211": {
+      "op": "PUSH3",
+      "value": "0x461BCD"
+    },
+    "1215": {
+      "op": "PUSH1",
+      "value": "0xE5"
+    },
+    "1217": {
+      "op": "SHL"
+    },
+    "1218": {
+      "fn": "SafeMath.add",
+      "offset": [
+        918,
+        964
+      ],
+      "op": "DUP2",
+      "path": "3"
+    },
+    "1219": {
+      "fn": "SafeMath.add",
+      "offset": [
+        918,
+        964
+      ],
+      "op": "MSTORE",
+      "path": "3"
+    },
+    "1220": {
+      "fn": "SafeMath.add",
+      "offset": [
+        918,
+        964
+      ],
+      "op": "PUSH1",
+      "path": "3",
+      "value": "0x20"
+    },
+    "1222": {
+      "fn": "SafeMath.add",
+      "offset": [
+        918,
+        964
+      ],
+      "op": "PUSH1",
+      "path": "3",
+      "value": "0x4"
+    },
+    "1224": {
+      "fn": "SafeMath.add",
+      "offset": [
+        918,
+        964
+      ],
+      "op": "DUP3",
+      "path": "3"
+    },
+    "1225": {
+      "fn": "SafeMath.add",
+      "offset": [
+        918,
+        964
+      ],
+      "op": "ADD",
+      "path": "3"
+    },
+    "1226": {
+      "fn": "SafeMath.add",
+      "offset": [
+        918,
+        964
+      ],
+      "op": "MSTORE",
+      "path": "3"
+    },
+    "1227": {
+      "fn": "SafeMath.add",
+      "offset": [
+        918,
+        964
+      ],
+      "op": "PUSH1",
+      "path": "3",
+      "value": "0x1B"
+    },
+    "1229": {
+      "fn": "SafeMath.add",
+      "offset": [
+        918,
+        964
+      ],
+      "op": "PUSH1",
+      "path": "3",
+      "value": "0x24"
+    },
+    "1231": {
+      "fn": "SafeMath.add",
+      "offset": [
+        918,
+        964
+      ],
+      "op": "DUP3",
+      "path": "3"
+    },
+    "1232": {
+      "fn": "SafeMath.add",
+      "offset": [
+        918,
+        964
+      ],
+      "op": "ADD",
+      "path": "3"
+    },
+    "1233": {
+      "fn": "SafeMath.add",
+      "offset": [
+        918,
+        964
+      ],
+      "op": "MSTORE",
+      "path": "3"
+    },
+    "1234": {
+      "fn": "SafeMath.add",
+      "offset": [
+        918,
+        964
+      ],
+      "op": "PUSH32",
+      "path": "3",
+      "value": "0x536166654D6174683A206164646974696F6E206F766572666C6F770000000000"
+    },
+    "1267": {
+      "fn": "SafeMath.add",
+      "offset": [
+        918,
+        964
+      ],
+      "op": "PUSH1",
+      "path": "3",
+      "value": "0x44"
+    },
+    "1269": {
+      "fn": "SafeMath.add",
+      "offset": [
+        918,
+        964
+      ],
+      "op": "DUP3",
+      "path": "3"
+    },
+    "1270": {
+      "fn": "SafeMath.add",
+      "offset": [
+        918,
+        964
+      ],
+      "op": "ADD",
+      "path": "3"
+    },
+    "1271": {
+      "fn": "SafeMath.add",
+      "offset": [
+        918,
+        964
+      ],
+      "op": "MSTORE",
+      "path": "3"
+    },
+    "1272": {
+      "fn": "SafeMath.add",
+      "offset": [
+        918,
+        964
+      ],
+      "op": "SWAP1",
+      "path": "3"
+    },
+    "1273": {
+      "fn": "SafeMath.add",
+      "offset": [
+        918,
+        964
+      ],
+      "op": "MLOAD",
+      "path": "3"
+    },
+    "1274": {
+      "fn": "SafeMath.add",
+      "offset": [
+        918,
+        964
+      ],
+      "op": "SWAP1",
+      "path": "3"
+    },
+    "1275": {
+      "fn": "SafeMath.add",
+      "offset": [
+        918,
+        964
+      ],
+      "op": "DUP2",
+      "path": "3"
+    },
+    "1276": {
+      "fn": "SafeMath.add",
+      "offset": [
+        918,
+        964
+      ],
+      "op": "SWAP1",
+      "path": "3"
+    },
+    "1277": {
+      "fn": "SafeMath.add",
+      "offset": [
+        918,
+        964
+      ],
+      "op": "SUB",
+      "path": "3"
+    },
+    "1278": {
+      "fn": "SafeMath.add",
+      "offset": [
+        918,
+        964
+      ],
+      "op": "PUSH1",
+      "path": "3",
+      "value": "0x64"
+    },
+    "1280": {
+      "fn": "SafeMath.add",
+      "offset": [
+        918,
+        964
+      ],
+      "op": "ADD",
+      "path": "3"
+    },
+    "1281": {
+      "fn": "SafeMath.add",
+      "offset": [
+        918,
+        964
+      ],
+      "op": "SWAP1",
+      "path": "3"
+    },
+    "1282": {
+      "fn": "SafeMath.add",
+      "offset": [
+        918,
+        964
+      ],
+      "op": "REVERT",
+      "path": "3"
+    },
+    "1283": {
+      "fn": "SafeMath.add",
+      "offset": [
+        918,
+        964
+      ],
+      "op": "JUMPDEST",
+      "path": "3"
+    },
+    "1284": {
+      "fn": "SafeMath.add",
+      "offset": [
+        978,
+        979
+      ],
+      "op": "SWAP4",
+      "path": "3",
+      "statement": 10
+    },
+    "1285": {
+      "fn": "SafeMath.add",
+      "offset": [
+        822,
+        984
+      ],
+      "op": "SWAP3",
+      "path": "3"
+    },
+    "1286": {
+      "op": "POP"
+    },
+    "1287": {
+      "op": "POP"
+    },
+    "1288": {
+      "op": "POP"
+    },
+    "1289": {
+      "fn": "SafeMath.add",
+      "jump": "o",
+      "offset": [
+        822,
+        984
+      ],
+      "op": "JUMP",
+      "path": "3"
+    },
+    "1290": {
+      "fn": "VRFRequestIDBase.makeRequestId",
+      "offset": [
+        1376,
+        1547
+      ],
+      "op": "JUMPDEST",
+      "path": "1"
+    },
+    "1291": {
+      "fn": "VRFRequestIDBase.makeRequestId",
+      "offset": [
+        1500,
+        1541
+      ],
+      "op": "PUSH1",
+      "path": "1",
+      "statement": 11,
+      "value": "0x40"
+    },
+    "1293": {
+      "fn": "VRFRequestIDBase.makeRequestId",
+      "offset": [
+        1500,
+        1541
+      ],
+      "op": "DUP1",
+      "path": "1"
+    },
+    "1294": {
+      "fn": "VRFRequestIDBase.makeRequestId",
+      "offset": [
+        1500,
+        1541
+      ],
+      "op": "MLOAD",
+      "path": "1"
+    },
+    "1295": {
+      "fn": "VRFRequestIDBase.makeRequestId",
+      "offset": [
+        1500,
+        1541
+      ],
+      "op": "PUSH1",
+      "path": "1",
+      "value": "0x20"
+    },
+    "1297": {
+      "fn": "VRFRequestIDBase.makeRequestId",
+      "offset": [
+        1500,
+        1541
+      ],
+      "op": "DUP1",
+      "path": "1"
+    },
+    "1298": {
+      "fn": "VRFRequestIDBase.makeRequestId",
+      "offset": [
+        1500,
+        1541
+      ],
+      "op": "DUP3",
+      "path": "1"
+    },
+    "1299": {
+      "fn": "VRFRequestIDBase.makeRequestId",
+      "offset": [
+        1500,
+        1541
+      ],
+      "op": "ADD",
+      "path": "1"
+    },
+    "1300": {
+      "fn": "VRFRequestIDBase.makeRequestId",
+      "offset": [
+        1500,
+        1541
+      ],
+      "op": "SWAP5",
+      "path": "1"
+    },
+    "1301": {
+      "fn": "VRFRequestIDBase.makeRequestId",
+      "offset": [
+        1500,
+        1541
+      ],
+      "op": "SWAP1",
+      "path": "1"
+    },
+    "1302": {
+      "fn": "VRFRequestIDBase.makeRequestId",
+      "offset": [
+        1500,
+        1541
+      ],
+      "op": "SWAP5",
+      "path": "1"
+    },
+    "1303": {
+      "fn": "VRFRequestIDBase.makeRequestId",
+      "offset": [
+        1500,
+        1541
+      ],
+      "op": "MSTORE",
+      "path": "1"
+    },
+    "1304": {
+      "fn": "VRFRequestIDBase.makeRequestId",
+      "offset": [
+        1500,
+        1541
+      ],
+      "op": "DUP1",
+      "path": "1"
+    },
+    "1305": {
+      "fn": "VRFRequestIDBase.makeRequestId",
+      "offset": [
+        1500,
+        1541
+      ],
+      "op": "DUP3",
+      "path": "1"
+    },
+    "1306": {
+      "fn": "VRFRequestIDBase.makeRequestId",
+      "offset": [
+        1500,
+        1541
+      ],
+      "op": "ADD",
+      "path": "1"
+    },
+    "1307": {
+      "fn": "VRFRequestIDBase.makeRequestId",
+      "offset": [
+        1500,
+        1541
+      ],
+      "op": "SWAP3",
+      "path": "1"
+    },
+    "1308": {
+      "fn": "VRFRequestIDBase.makeRequestId",
+      "offset": [
+        1500,
+        1541
+      ],
+      "op": "SWAP1",
+      "path": "1"
+    },
+    "1309": {
+      "fn": "VRFRequestIDBase.makeRequestId",
+      "offset": [
+        1500,
+        1541
+      ],
+      "op": "SWAP3",
+      "path": "1"
+    },
+    "1310": {
+      "fn": "VRFRequestIDBase.makeRequestId",
+      "offset": [
+        1500,
+        1541
+      ],
+      "op": "MSTORE",
+      "path": "1"
+    },
+    "1311": {
+      "fn": "VRFRequestIDBase.makeRequestId",
+      "offset": [
+        1500,
+        1541
+      ],
+      "op": "DUP1",
+      "path": "1"
+    },
+    "1312": {
+      "fn": "VRFRequestIDBase.makeRequestId",
+      "offset": [
+        1500,
+        1541
+      ],
+      "op": "MLOAD",
+      "path": "1"
+    },
+    "1313": {
+      "op": "DUP1"
+    },
+    "1314": {
+      "op": "DUP4"
+    },
+    "1315": {
+      "op": "SUB"
+    },
+    "1316": {
+      "op": "DUP3"
+    },
+    "1317": {
+      "op": "ADD"
+    },
+    "1318": {
+      "op": "DUP2"
+    },
+    "1319": {
+      "op": "MSTORE"
+    },
+    "1320": {
+      "fn": "VRFRequestIDBase.makeRequestId",
+      "offset": [
+        1500,
+        1541
+      ],
+      "op": "PUSH1",
+      "path": "1",
+      "value": "0x60"
+    },
+    "1322": {
+      "fn": "VRFRequestIDBase.makeRequestId",
+      "offset": [
+        1500,
+        1541
+      ],
+      "op": "SWAP1",
+      "path": "1"
+    },
+    "1323": {
+      "fn": "VRFRequestIDBase.makeRequestId",
+      "offset": [
+        1500,
+        1541
+      ],
+      "op": "SWAP3",
+      "path": "1"
+    },
+    "1324": {
+      "fn": "VRFRequestIDBase.makeRequestId",
+      "offset": [
+        1500,
+        1541
+      ],
+      "op": "ADD",
+      "path": "1"
+    },
+    "1325": {
+      "fn": "VRFRequestIDBase.makeRequestId",
+      "offset": [
+        1500,
+        1541
+      ],
+      "op": "SWAP1",
+      "path": "1"
+    },
+    "1326": {
+      "fn": "VRFRequestIDBase.makeRequestId",
+      "offset": [
+        1500,
+        1541
+      ],
+      "op": "MSTORE",
+      "path": "1"
+    },
+    "1327": {
+      "fn": "VRFRequestIDBase.makeRequestId",
+      "offset": [
+        1490,
+        1542
+      ],
+      "op": "DUP1",
+      "path": "1"
+    },
+    "1328": {
+      "fn": "VRFRequestIDBase.makeRequestId",
+      "offset": [
+        1490,
+        1542
+      ],
+      "op": "MLOAD",
+      "path": "1"
+    },
+    "1329": {
+      "fn": "VRFRequestIDBase.makeRequestId",
+      "offset": [
+        1490,
+        1542
+      ],
+      "op": "SWAP2",
+      "path": "1"
+    },
+    "1330": {
+      "fn": "VRFRequestIDBase.makeRequestId",
+      "offset": [
+        1490,
+        1542
+      ],
+      "op": "ADD",
+      "path": "1"
+    },
+    "1331": {
+      "fn": "VRFRequestIDBase.makeRequestId",
+      "offset": [
+        1490,
+        1542
+      ],
+      "op": "KECCAK256",
+      "path": "1"
+    },
+    "1332": {
+      "fn": "VRFRequestIDBase.makeRequestId",
+      "offset": [
+        1490,
+        1542
+      ],
+      "op": "SWAP1",
+      "path": "1"
+    },
+    "1333": {
+      "fn": "VRFRequestIDBase.makeRequestId",
+      "jump": "o",
+      "offset": [
+        1376,
+        1547
+      ],
+      "op": "JUMP",
+      "path": "1"
+    }
+  },
+  "sha1": "35aec97301bb6d33b7fc8e903c03b83a78bf9303",
+  "source": "\npragma solidity 0.6.6;\n\nimport \"@chainlink/contracts/src/v0.6/VRFConsumerBase.sol\";\n\ncontract VRFConsumer is VRFConsumerBase {\n    \n    bytes32 internal keyHash;\n    uint256 internal fee;\n    \n    uint256 public randomResult;\n    \n    /**\n     * Constructor inherits VRFConsumerBase\n     * \n     * Network: Kovan\n     * Chainlink VRF Coordinator address: 0xdD3782915140c8f3b190B5D67eAc6dc5760C46E9\n     * LINK token address:                0xa36085F69e2889c224210F603D836748e7dC0088\n     * Key Hash: 0x6c3699283bda56ad74f6b855546325b68d482e983852a7a82979cc4807b641f4\n     */\n    constructor(bytes32 _keyhash, address _vrfCoordinator, address _linkToken) \n        VRFConsumerBase(\n            _vrfCoordinator, // VRF Coordinator\n            _linkToken  // LINK Token\n        ) public\n    {\n        keyHash = _keyhash;\n        fee = 0.1 * 10 ** 18; // 0.1 LINK\n    }\n    \n    /** \n     * Requests randomness from a user-provided seed\n     */\n    function getRandomNumber(uint256 userProvidedSeed) public returns (bytes32 requestId) {\n        require(LINK.balanceOf(address(this)) >= fee, \"Not enough LINK - fill contract with faucet\");\n        return requestRandomness(keyHash, fee, userProvidedSeed);\n    }\n\n    /**\n     * Callback function used by VRF Coordinator\n     */\n    function fulfillRandomness(bytes32 requestId, uint256 randomness) internal override {\n        randomResult = randomness;\n    }\n}",
+  "sourceMap": "86:1319:4:-:0;;;580:285;5:9:-1;2:2;;;27:1;24;17:12;2:2;580:285:4;;;;;;;;;;;;;;;15:2:-1;10:3;7:11;4:2;;;31:1;28;21:12;4:2;-1:-1;580:285:4;;;;;;;;;;;-1:-1:-1;;;;;;580:285:4;6974:32:0;;;;;;;7012;;;;;;;798:7:4::1;:18:::0;832:14:::1;826:3;:20:::0;86:1319;;;;;;;;;;;;;;;;",
+  "sourcePath": "contracts/VRFConsumer.sol",
+  "type": "contract"
+}
